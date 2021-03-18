@@ -1,0 +1,70 @@
+<!--pages/home/home.wxml-->
+<view class="lunbotu">
+  <swiper
+    indicator-dots="true"
+    autoplay="true"
+    style='height:300rpx'>
+    <swiper-item>
+      <image style="width:750rpx;" src="/images/pic1.jpeg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/pic2.jpeg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/pic3.jpeg"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="icon_area">
+  <view class="box_item">
+    <view class="box_img">
+      <image class="box_img" src="/images/icon1.png"></image>
+    </view>
+    <view class="box_text">
+      icon1
+    </view>
+  </view>
+  <view class="box_item">
+    <view class="box_img">
+      <image class="box_img" src="/images/icon2.png"></image>
+    </view>
+    <view class="box_text">
+      icon2
+    </view>
+  </view>
+  <view class="box_item">
+    <view class="box_img">
+      <image class="box_img" src="/images/icon3.png"></image>
+    </view>
+    <view class="box_text">
+      icon3
+    </view>
+  </view>
+  <view class="box_item">
+    <view class="box_img">
+      <image class="box_img" src="/images/icon4.png"></image>
+    </view>
+    <view class="box_text">
+      icon4
+    </view>
+  </view>
+  <view class="box_item">
+    <view class="box_img">
+      <image class="box_img" src="/images/icon5.png"></image>
+    </view>
+    <view class="box_text">
+      icon5
+    </view>
+  </view>
+  <view class="box_item">6</view>
+  <view class="box_item">7</view>
+  <view class="box_item">8</view>
+  <view class="box_item">9</view>
+  <view class="box_item">10</view>
+</view>
+
+<view>
+  推荐产品列表
+</view>
+

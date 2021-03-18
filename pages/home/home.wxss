@@ -1,0 +1,33 @@
+/* pages/home/home.wxss */
+.lunbotu{
+  height: 300rpx;
+}
+
+.swiper_img{
+  width:750rpx;
+  height:300rpx;
+}
+.icon_area{
+  height: 400rpx;
+}
+
+.box_item{
+  width: 150rpx;
+  height: 200rpx;
+  float:left;
+}
+
+.box_img{
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.box_text{
+  width: 150rpx;
+  height: 50rpx;
+  color: grey;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: bold;
+  text-align: center;
+}
