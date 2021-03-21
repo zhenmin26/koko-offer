@@ -1,70 +1,114 @@
 <!--pages/home/home.wxml-->
-<view class="lunbotu">
-  <swiper
-    indicator-dots="true"
-    autoplay="true"
-    style='height:300rpx'>
-    <swiper-item>
-      <image style="width:750rpx;" src="/images/pic1.jpeg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="/images/pic2.jpeg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="/images/pic3.jpeg"></image>
-    </swiper-item>
-  </swiper>
+<!-- header bar -->
+<view class="header">
+  <view class="header_icon">
+    <image class="header_icon" src="/images/home/icon.png"></image>
+  </view>
+  <view class="header_title">
+    Your Offer Record
+  </view>
 </view>
 
-<view class="icon_area">
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/icon1.png"></image>
-    </view>
-    <view class="box_text">
-      icon1
-    </view>
-  </view>
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/icon2.png"></image>
-    </view>
-    <view class="box_text">
-      icon2
-    </view>
-  </view>
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/icon3.png"></image>
-    </view>
-    <view class="box_text">
-      icon3
-    </view>
-  </view>
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/icon4.png"></image>
-    </view>
-    <view class="box_text">
-      icon4
-    </view>
-  </view>
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/icon5.png"></image>
-    </view>
-    <view class="box_text">
-      icon5
-    </view>
-  </view>
-  <view class="box_item">6</view>
-  <view class="box_item">7</view>
-  <view class="box_item">8</view>
-  <view class="box_item">9</view>
-  <view class="box_item">10</view>
-</view>
-
+<!-- Content area -->
 <view>
-  推荐产品列表
+  <!-- add new content -->
+  <view class="add_area">
+    <view class="add_icon">
+      <image class="add_icon" src="/images/home/add.png"></image>
+    </view>
+    <view class="add_description">
+      new record
+    </view>
+  </view>
+
+  <!-- list all content -->
+  <view class="content_area">
+    <!-- icon -->
+    <view class="content_icon">
+      <image class="content_icon_pic" src="/images/home/content_icon.png"></image>
+    </view>
+    <!-- body -->
+    <view class="content_body">
+      <view class="content_title">
+        <view class="content_title_name">Title</view>
+        <view class="content_title_box">
+          <view class="content_title_inbox">Summer intern</view>
+        </view>
+      </view>
+      <view class="content_status">
+        <view class="content_status_name">Status</view>
+        <view class="content_status_box">
+          <view class="content_status_inbox">Interview invitation</view>
+        </view>
+      </view>
+    </view>
+    <!-- more -->
+    <view class="content_more">
+      <image class="content_more_pic" src="/images/home/more.png"></image>
+    </view>
+  </view>
+  <!-- second begins -->
+  <view class="content_area">
+    <!-- icon -->
+    <view class="content_icon">
+      <image class="content_icon_pic" src="/images/home/content_icon.png"></image>
+    </view>
+    <!-- body -->
+    <view class="content_body">
+      <view class="content_title">
+        <view class="content_title_name">Title</view>
+        <view class="content_title_box">
+          <view class="content_title_inbox">cs master</view>
+        </view>
+      </view>
+      <view class="content_status">
+        <view class="content_status_name">Status</view>
+        <view class="content_status_box">
+          <view class="content_status_inbox">application submitted</view>
+        </view>
+      </view>
+    </view>
+    <!-- more -->
+    <view class="content_more">
+      <image class="content_more_pic" src="/images/home/more.png"></image>
+    </view>
+  </view>
+  <!-- second ends -->
+</view>
+
+<!-- Navigator bar-->
+<view class="navigator_area">
+  <view class="navigator_item">
+    <view class="navigator_image">
+      <image class="navigator_image" src="/images/home/main.png"></image>
+    </view>
+    <view class="navigator_text">
+      Home
+    </view>
+  </view>
+  <view class="navigator_item">
+    <view class="navigator_image" bindtap="learn_click">
+      <image class="navigator_image" src="/images/home/stat.png"></image>
+    </view>
+    <view class="navigator_text">
+      Learn
+    </view>
+  </view>
+  <view class="navigator_item" bindtap="forum_click">
+    <view class="navigator_image">
+      <image class="navigator_image" src="/images/home/forum.png"></image>
+    </view>
+    <view class="navigator_text">
+      Forum
+    </view>
+  </view>
+  <view class="navigator_item" bindtap="setting_click">
+    <view class="navigator_image">
+      <image class="navigator_image" src="/images/home/setting.png"></image>
+    </view>
+    <view class="navigator_text">
+      Setting
+    </view>
+  </view>
 </view>
 

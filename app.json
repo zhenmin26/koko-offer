@@ -1,6 +1,9 @@
 {
   "pages": [
-    "pages/home/home"
+    "pages/home/home",
+    "pages/forum/forum",
+    "pages/learn/learn",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "light",

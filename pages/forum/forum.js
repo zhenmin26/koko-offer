@@ -1,4 +1,4 @@
-// pages/home/home.js
+// pages/forum/forum.js
 Page({
 
   /**
@@ -64,15 +64,15 @@ Page({
 
   },
 
-  learn_click: function () {
+  home_click: function () {
     wx.navigateTo({
-      url: '../learn/learn',
+      url: '../home/home',
     })
   },
 
-  forum_click: function () {
+  learn_click: function () {
     wx.navigateTo({
-      url: '../forum/forum',
+      url: '../learn/learn',
     })
   },
 

@@ -1,4 +1,4 @@
-// pages/home/home.js
+// pages/learn/learn.js
 Page({
 
   /**
@@ -64,9 +64,9 @@ Page({
 
   },
 
-  learn_click: function () {
+  home_click: function () {
     wx.navigateTo({
-      url: '../learn/learn',
+      url: '../home/home',
     })
   },
 

@@ -1,0 +1,73 @@
+<!--pages/setting/setting.wxml-->
+<!-- header bar -->
+<view class="header">
+  <view class="header_icon">
+    <image class="header_icon" src="/images/setting/setting.png"></image>
+  </view>
+  <view class="header_title">
+    Setting
+  </view>
+</view>
+
+<!-- setting area -->
+<view class="setting_box">
+  <view class="setting_icon">
+    <image class="setting_icon_pic" src="/images/setting/friend.png"></image>
+  </view>
+  <view class="setting_content">Follow</view>
+</view>
+<view class="setting_box">
+  <view class="setting_icon">
+    <image class="setting_icon_pic" src="/images/setting/message.png"></image>
+  </view>
+  <view class="setting_content">Message</view>
+</view>
+<view class="setting_box">
+  <view class="setting_icon">
+    <image class="setting_icon_pic" src="/images/setting/about.png"></image>
+  </view>
+  <view class="setting_content">About</view>
+</view>
+<view class="setting_box">
+  <view class="setting_icon">
+    <image class="setting_icon_pic" src="/images/setting/question.png"></image>
+  </view>
+  <view class="setting_content">Q&A</view>
+</view>
+
+<!-- Navigator bar-->
+<view class="navigator_area">
+  <view class="navigator_item" bindtap="home_click">
+    <view class="navigator_image">
+      <image class="navigator_image" src="/images/home/main.png"></image>
+    </view>
+    <view class="navigator_text">
+      Home
+    </view>
+  </view>
+  <view class="navigator_item" bindtap="learn_click">
+    <view class="navigator_image">
+      <image class="navigator_image" src="/images/home/stat.png"></image>
+    </view>
+    <view class="navigator_text">
+      Learn
+    </view>
+  </view>
+  <view class="navigator_item" bindtap="forum_click">
+    <view class="navigator_image">
+      <image class="navigator_image" src="/images/home/forum.png"></image>
+    </view>
+    <view class="navigator_text">
+      Forum
+    </view>
+  </view>
+  <view class="navigator_item">
+    <view class="navigator_image">
+      <image class="navigator_image" src="/images/home/setting.png"></image>
+    </view>
+    <view class="navigator_text">
+      Setting
+    </view>
+  </view>
+</view>
+

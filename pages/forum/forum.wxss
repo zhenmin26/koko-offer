@@ -1,0 +1,100 @@
+/* pages/forum/forum.wxss */
+.flash{
+  height: 300rpx;
+}
+
+.swiper_img{
+  width:750rpx;
+  height:300rpx;
+}
+.icon_area{
+  height: 200rpx;
+}
+
+.box_item{
+  width: 150rpx;
+  height: 200rpx;
+  float:left;
+}
+
+.box_img{
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.box_text{
+  width: 150rpx;
+  height: 50rpx;
+  color: grey;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: bold;
+  text-align: center;
+}
+
+/* post area */
+.post_box{
+  height: 100rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border-top: 4rpx solid whitesmoke;
+  border-bottom: 4rpx solid whitesmoke;
+}
+
+.post_icon{
+  width: 80rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  padding: 10rpx;
+  float: left;
+}
+
+.post_icon_pic{
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+}
+
+.post_content{
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 30rpx;
+  padding-left: 5rpx;
+  letter-spacing: -0.8px;
+  width: 600rpx;
+  float: left;
+}
+
+/* Navigator bar */
+.navigator_area{
+  width: 750rpx;
+  height: 150rpx;
+  position: absolute;
+  bottom: 0;
+  border-top: 4rpx solid lightgray;
+}
+
+.navigator_item{
+  width: 187.5rpx;
+  height: 150rpx;
+  float: left;
+}
+
+.navigator_image{
+  width: 82rpx;
+  height: 82rpx;
+  position: relative;
+  top: 5rpx;
+  left: 20rpx;
+}
+
+.navigator_text{
+  width: 150rpx;
+  height: 50rpx;
+  color:grey;
+  font-size: 14px;
+  font-family: 'Arial', Times, serif;
+  position: relative;
+  top: 10rpx;
+  left: 40rpx;
+}

@@ -1,0 +1,169 @@
+/* pages/learn/learn.wxss */
+/* Header */
+.header{
+  width: 750rpx;
+  height: 75rpx;
+  border-bottom: 4rpx solid lightgray;
+}
+
+.header_icon{
+  position: relative;
+  left: 10rpx;
+  width: 70rpx;
+  height: 70rpx;
+  float: left;
+}
+
+.header_title{
+  width: 450rpx;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 550;
+  letter-spacing: -1.3px;
+  word-spacing: -0.06em;
+  color: black;
+  position: relative;
+  left:20rpx;
+  top: 15rpx;
+  float: left;
+}
+
+.header_pic{
+  width: 170rpx;
+  height: 170rpx;
+  float:left;
+}
+
+/* learn area */
+.intro{
+  height: 150rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+  color: gray;
+}
+
+.learn_box1{
+  height: 200rpx;
+  box-sizing: border-box;
+  padding: 10rpx 15rpx;
+}
+
+.learn_inbox1{
+  height: 180rpx;
+  box-sizing: border-box;
+  border: solid 2px green;
+  border-radius: 5px;
+}
+
+.learn_inbox1_top{
+  padding-left: 20rpx;
+  padding-top: 15rpx;
+  height: 85rpx;
+  font-size: 40rpx;
+  color: white;
+  font-weight: 550;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.learn_inbox1_intop{
+  height: 80rpx;
+  width: 255rpx;
+  border-radius: 5px;
+  background-color: #7AAF49;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  padding-left: 10rpx;
+}
+
+.learn_inbox1_bottom{
+  height: 85rpx;
+  padding-top: 15rpx;
+  padding-left: 20rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.learn_box2{
+  height: 100rpx;
+  padding: 5rpx 15rpx 5rpx 15rpx;
+}
+
+.learn_inbox2{
+  height: 90rpx;
+  box-sizing: border-box;
+  border: solid 2px #7AAF49;
+  border-radius: 5px;
+}
+
+.learn_inbox2_icon{
+  width: 80rpx;
+  box-sizing: border-box;
+  padding: 12.5rpx;
+  float: left;
+}
+
+.learn_inbox2_icon_pic{
+  width: 55rpx;
+  height: 55rpx;
+}
+
+.learn_inbox2_text{
+  width: 500rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  padding-top: 25rpx;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  word-spacing: -0.8px;
+}
+
+.learn_inbox2_enter{
+  width: 50rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  padding: 25rpx 10rpx 25rpx 10rpx;
+  float: right;
+}
+
+.learn_inbox2_enter_pic{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+}
+
+
+/* Navigator bar */
+.navigator_area{
+  width: 750rpx;
+  height: 150rpx;
+  position: absolute;
+  bottom: 0;
+  border-top: 4rpx solid lightgray;
+}
+
+.navigator_item{
+  width: 187.5rpx;
+  height: 150rpx;
+  float: left;
+}
+
+.navigator_image{
+  width: 82rpx;
+  height: 82rpx;
+  position: relative;
+  top: 5rpx;
+  left: 20rpx;
+}
+
+.navigator_text{
+  width: 150rpx;
+  height: 50rpx;
+  color:grey;
+  font-size: 14px;
+  font-family: 'Arial', Times, serif;
+  position: relative;
+  top: 10rpx;
+  left: 40rpx;
+}
