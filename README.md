@@ -1,2 +1,2 @@
 # weixin_miniprogram
-repository for weixin miniprogram
+repository for koko offer
