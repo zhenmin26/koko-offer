@@ -1,92 +1,35 @@
 <!--pages/learn/learn.wxml-->
 <!-- header bar -->
-<view class="header">
-  <view class="header_icon">
-    <image class="header_icon" src="/images/learn/learn.png"></image>
-  </view>
-  <view style="letter-spacing: -0.7px;" class="header_title">
-    Learn
-  </view>
+<view>
+  <header headerIcon="learn" headerText="Learn"></header>
 </view>
 
 <!-- learn area -->
 <view class="intro">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat facilisis convallis. Donec sed interdum leo.
+  Here you may find some interesting vedios or soothing music to release your stress, and some practical articles.
 </view>
-<view class="learn_box1">
-  <view class="learn_inbox1">
-    <view class="learn_inbox1_top">
-      <view class="learn_inbox1_intop">TOP articles</view>
-    </view>
-    <view class="learn_inbox1_bottom">Click to learn</view>
-  </view>
-</view>
-<view class="learn_box2">
-  <view class="learn_inbox2">
-    <view class="learn_inbox2_icon">
-      <image class="learn_inbox2_icon_pic" src="/images/learn/video.png"></image>
-    </view>
-    <view class="learn_inbox2_text">Lorem ipsum dolor sit amet</view>
-    <view class="learn_inbox2_enter">
-      <image class="learn_inbox2_enter_pic" src="/images/learn/enter.png"></image>
+<block wx:for="{{tops}}" wx:key="index">
+  <view class="learn_box1">
+    <view class="learn_inbox1">
+      <view class="learn_inbox1_top">
+        <view class="learn_inbox1_intop">TOP articles</view>
+      </view>
+      <view class="learn_inbox1_bottom">{{item.content}}</view>
     </view>
   </view>
-</view>
-<view class="learn_box2">
-  <view class="learn_inbox2">
-    <view class="learn_inbox2_icon">
-      <image class="learn_inbox2_icon_pic" src="/images/learn/music.png"></image>
-    </view>
-    <view class="learn_inbox2_text">Lorem ipsum dolor sit amet</view>
-    <view class="learn_inbox2_enter">
-      <image class="learn_inbox2_enter_pic" src="/images/learn/enter.png"></image>
-    </view>
-  </view>
-</view>
-<view class="learn_box2">
-  <view class="learn_inbox2">
-    <view class="learn_inbox2_icon">
-      <image class="learn_inbox2_icon_pic" src="/images/learn/article.png"></image>
-    </view>
-    <view class="learn_inbox2_text">Lorem ipsum dolor sit amet</view>
-    <view class="learn_inbox2_enter">
-      <image class="learn_inbox2_enter_pic" src="/images/learn/enter.png"></image>
+</block>
+<block wx:for="{{articles}}" wx:key="index">
+  <view class="learn_box2">
+    <view class="learn_inbox2">
+      <view class="learn_inbox2_icon">
+        <image class="learn_inbox2_icon_pic" src="/images/learn/{{item.type}}.png"></image>
+      </view>
+      <view class="learn_inbox2_text">{{item.text}}</view>
+      <view class="learn_inbox2_enter">
+        <image class="learn_inbox2_enter_pic" src="/images/learn/enter.png"></image>
+      </view>
     </view>
   </view>
-</view>
+</block>
 
-<!-- Navigator bar-->
-<view class="navigator_area">
-  <view class="navigator_item">
-    <view class="navigator_image"  bindtap="home_click">
-      <image class="navigator_image" src="/images/home/main.png"></image>
-    </view>
-    <view class="navigator_text">
-      Home
-    </view>
-  </view>
-  <view class="navigator_item">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/stat.png"></image>
-    </view>
-    <view class="navigator_text">
-      Learn
-    </view>
-  </view>
-  <view class="navigator_item" bindtap="forum_click">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/forum.png"></image>
-    </view>
-    <view class="navigator_text">
-      Forum
-    </view>
-  </view>
-  <view class="navigator_item" bindtap="setting_click">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/setting.png"></image>
-    </view>
-    <view class="navigator_text">
-      Setting
-    </view>
-  </view>
-</view>
+

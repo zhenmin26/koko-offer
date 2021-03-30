@@ -1,99 +1,35 @@
 /* pages/setting/setting.wxss */
-/* Header */
-.header{
-  width: 750rpx;
-  height: 75rpx;
-  border-bottom: 4rpx solid lightgray;
-}
-
-.header_icon{
-  position: relative;
-  left: 10rpx;
-  width: 70rpx;
-  height: 70rpx;
-  float: left;
-}
-
-.header_title{
-  width: 450rpx;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 550;
-  letter-spacing: -1.3px;
-  word-spacing: -0.06em;
-  color: black;
-  position: relative;
-  left:20rpx;
-  top: 15rpx;
-  float: left;
-}
-
-.header_pic{
-  width: 170rpx;
-  height: 170rpx;
-  float:left;
-}
-
 /* setting area */
 .setting_box{
-  height: 80rpx;
+  height: 88rpx;
+  box-sizing: border-box;
   border-bottom: 4rpx solid whitesmoke;
+  display: flex;
 }
 
 .setting_icon{
   width: 80rpx;
   height: 80rpx;
-  box-sizing: border-box;
-  padding: 10rpx;
-  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .setting_icon_pic{
   width: 60rpx;
   height: 60rpx;
-  float: left;
 }
 
 .setting_content{
+  display: flex;
+  align-items: center;
+}
+
+.setting_content_text{
   font-size: 17px;
   font-family: Arial, Helvetica, sans-serif;
-  padding-top: 30rpx;
-  padding-left: 5rpx;
   letter-spacing: -0.8px;
-  width: 600rpx;
-  float: left;
-}
-
-/* Navigator bar */
-.navigator_area{
-  width: 750rpx;
-  height: 150rpx;
-  position: absolute;
-  bottom: 0;
-  border-top: 4rpx solid lightgray;
-}
-
-.navigator_item{
-  width: 187.5rpx;
-  height: 150rpx;
-  float: left;
-}
-
-.navigator_image{
-  width: 82rpx;
-  height: 82rpx;
-  position: relative;
-  top: 5rpx;
-  left: 20rpx;
-}
-
-.navigator_text{
-  width: 150rpx;
-  height: 50rpx;
-  color:grey;
-  font-size: 14px;
-  font-family: 'Arial', Times, serif;
-  position: relative;
-  top: 10rpx;
-  left: 40rpx;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
 }

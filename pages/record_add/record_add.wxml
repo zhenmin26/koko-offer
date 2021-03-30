@@ -1,0 +1,5 @@
+<!--pages/record_add/record_add.wxml-->
+<!-- header bar -->
+<view>
+  <header headerIcon="home" headerText="New Record"></header>
+</view>

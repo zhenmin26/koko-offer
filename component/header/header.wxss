@@ -1,0 +1,62 @@
+/* pages/header.wxss */
+/* Header */
+.header{
+  width: 750rpx;
+  height: 75rpx;
+  border-bottom: 4rpx solid lightgray;
+  display: flex;
+}
+
+.header_icon{
+  width: 100rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.icon_size{
+  width: 75rpx;
+  height: 75rpx;
+}
+
+.header_title{
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
+.title_fontstyle{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 550;
+  letter-spacing: -1.3px;
+  word-spacing: -0.06em;
+  color: black;
+}
+
+/* add new content */
+.add_area{
+  width: 750rpx;
+  height: 75rpx;
+  /* border-bottom: solid 2px whitesmoke; */
+}
+
+.add_icon{
+  width: 75rpx;
+  height: 75rpx;
+  float: left;
+  position: relative;
+  left: 10rpx;
+  bottom: -4rpx;
+}
+
+.add_description{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #F1C40F;
+  font-weight: normal;
+  position: relative;
+  left: 25rpx;
+  top: 20rpx;
+  display: inline;
+}

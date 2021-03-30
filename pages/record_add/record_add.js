@@ -1,4 +1,4 @@
-// pages/setting/setting.js
+// pages/record_add/record_add.js
 Page({
 
   /**
@@ -62,5 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
+  }
 })

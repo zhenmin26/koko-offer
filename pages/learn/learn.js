@@ -5,7 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tops: [
+      {
+        content: "click to learn",
+      },
+    ],
+    articles: [
+      {
+        type: "video",
+        text: 111,
+      },
+      {
+        type: "music",
+        text: 222,
+      },
+      {
+        type: "article",
+        text: 333,
+      },
+    ],
   },
 
   /**
@@ -62,23 +80,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  home_click: function () {
-    wx.navigateTo({
-      url: '../home/home',
-    })
-  },
-
-  forum_click: function () {
-    wx.navigateTo({
-      url: '../forum/forum',
-    })
-  },
-
-  setting_click: function () {
-    wx.navigateTo({
-      url: '../setting/setting',
-    })
   },
 })

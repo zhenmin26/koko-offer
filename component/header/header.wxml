@@ -1,0 +1,10 @@
+<!--pages/header.wxml-->
+<view class="header">
+  <view class="header_icon">
+    <image class="icon_size" src="/images/header/{{headerIcon}}.png"></image>
+  </view>
+  <view class="header_title">
+    <view class="title_fontstyle">{{headerText}}</view>
+  </view>
+</view>
+<slot></slot>

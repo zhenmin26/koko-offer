@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<text>{{id}}</text>
+
+<view bindtap="aaa">点我</view>

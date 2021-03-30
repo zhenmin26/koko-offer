@@ -1,0 +1,5 @@
+<!--pages/record_more/record_more.wxml-->
+<!-- header bar -->
+<view>
+  <header headerIcon="home" headerText="Details"></header>
+</view>

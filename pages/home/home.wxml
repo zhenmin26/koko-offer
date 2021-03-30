@@ -1,114 +1,62 @@
 <!--pages/home/home.wxml-->
 <!-- header bar -->
-<view class="header">
-  <view class="header_icon">
-    <image class="header_icon" src="/images/home/icon.png"></image>
-  </view>
-  <view class="header_title">
-    Your Offer Record
+<view>
+  <header headerIcon="home" headerText="Your Offer Record"></header>
+</view>
+
+<!-- add new content -->
+
+<view class="add_area">
+  <navigator url="/pages/record_add/record_add?id=101">
+    <view class="add_icon">
+      <image class="add_icon" src="/images/home/add.png"></image>
+    </view>
+  </navigator>
+  <view class="add_description">
+    new record
   </view>
 </view>
 
 <!-- Content area -->
 <view>
-  <!-- add new content -->
-  <view class="add_area">
-    <view class="add_icon">
-      <image class="add_icon" src="/images/home/add.png"></image>
-    </view>
-    <view class="add_description">
-      new record
-    </view>
-  </view>
-
   <!-- list all content -->
   <view class="content_area">
-    <!-- icon -->
-    <view class="content_icon">
-      <image class="content_icon_pic" src="/images/home/content_icon.png"></image>
-    </view>
-    <!-- body -->
-    <view class="content_body">
-      <view class="content_title">
-        <view class="content_title_name">Title</view>
-        <view class="content_title_box">
-          <view class="content_title_inbox">Summer intern</view>
+    <block wx:for="{{records}}" wx:key="index">
+      <!-- icon -->
+      <view class="content_icon">
+        <image class="content_icon_pic" src="/images/home/content_icon{{item.id}}.png"></image>
+      </view>
+      <!-- body -->
+      <view class="content_body">
+        <view class="content_title">
+          <view class="content_title_name">Title</view>
+          <view class="content_title_box">
+            <view class="content_title_inbox">{{item.title}}</view>
+          </view>
+        </view>
+        <view class="content_status">
+          <view class="content_status_name">Status</view>
+          <view class="content_status_box">
+            <view class="content_status_inbox">{{item.status}}</view>
+          </view>
         </view>
       </view>
-      <view class="content_status">
-        <view class="content_status_name">Status</view>
-        <view class="content_status_box">
-          <view class="content_status_inbox">Interview invitation</view>
+      <!-- more -->
+      <navigator url="/pages/record_more/record_more?id=101">
+        <view class="content_more">
+          <image class="content_more_pic" src="/images/home/more.png"></image>
         </view>
-      </view>
-    </view>
-    <!-- more -->
-    <view class="content_more">
-      <image class="content_more_pic" src="/images/home/more.png"></image>
-    </view>
+      </navigator>
+    </block>
   </view>
-  <!-- second begins -->
-  <view class="content_area">
-    <!-- icon -->
-    <view class="content_icon">
-      <image class="content_icon_pic" src="/images/home/content_icon.png"></image>
-    </view>
-    <!-- body -->
-    <view class="content_body">
-      <view class="content_title">
-        <view class="content_title_name">Title</view>
-        <view class="content_title_box">
-          <view class="content_title_inbox">cs master</view>
-        </view>
-      </view>
-      <view class="content_status">
-        <view class="content_status_name">Status</view>
-        <view class="content_status_box">
-          <view class="content_status_inbox">application submitted</view>
-        </view>
-      </view>
-    </view>
-    <!-- more -->
-    <view class="content_more">
-      <image class="content_more_pic" src="/images/home/more.png"></image>
-    </view>
-  </view>
-  <!-- second ends -->
 </view>
 
-<!-- Navigator bar-->
-<view class="navigator_area">
-  <view class="navigator_item">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/main.png"></image>
+<block wx:for="{{array}}" wx:key="index">
+  <navigator url="/pages/test/test?id={{item.id}}">
+    <view style="border: solid 2px black;">
+      <view> {{item.title}} </view>
+      <view> {{item.num}} </view>
     </view>
-    <view class="navigator_text">
-      Home
-    </view>
-  </view>
-  <view class="navigator_item">
-    <view class="navigator_image" bindtap="learn_click">
-      <image class="navigator_image" src="/images/home/stat.png"></image>
-    </view>
-    <view class="navigator_text">
-      Learn
-    </view>
-  </view>
-  <view class="navigator_item" bindtap="forum_click">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/forum.png"></image>
-    </view>
-    <view class="navigator_text">
-      Forum
-    </view>
-  </view>
-  <view class="navigator_item" bindtap="setting_click">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/setting.png"></image>
-    </view>
-    <view class="navigator_text">
-      Setting
-    </view>
-  </view>
-</view>
+  </navigator>
+</block>
 

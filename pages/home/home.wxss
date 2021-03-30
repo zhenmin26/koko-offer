@@ -1,39 +1,4 @@
 /* pages/home/home.wxss */
-/* Header */
-.header{
-  width: 750rpx;
-  height: 75rpx;
-  border-bottom: 4rpx solid lightgray;
-}
-
-.header_icon{
-  position: relative;
-  left: 10rpx;
-  width: 70rpx;
-  height: 70rpx;
-  float: left;
-}
-
-.header_title{
-  width: 450rpx;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 550;
-  letter-spacing: -1.3px;
-  word-spacing: -0.06em;
-  color: black;
-  position: relative;
-  left:20rpx;
-  top: 15rpx;
-  float: left;
-}
-
-.header_pic{
-  width: 170rpx;
-  height: 170rpx;
-  float:left;
-}
-
 /* add new content */
 .add_area{
   width: 750rpx;
@@ -46,24 +11,25 @@
   height: 75rpx;
   float: left;
   position: relative;
-  left: 15rpx;
+  left: 10rpx;
   bottom: -4rpx;
 }
 
 .add_description{
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
   color: #F1C40F;
   font-weight: normal;
   position: relative;
-  left: 27rpx;
-  top: 15rpx;
+  left: 25rpx;
+  top: 20rpx;
   display: inline;
 }
-
 /* Content */
 .content_area{
   width: 750rpx;
   height: 150rpx;
+  /* display: flex; */
 }
 
 .content_icon{
@@ -181,38 +147,4 @@
   height: 50rpx;
   position: relative;
   top: 35rpx;
-}
-
-/* Navigator bar */
-.navigator_area{
-  width: 750rpx;
-  height: 150rpx;
-  position: absolute;
-  bottom: 0;
-  border-top: 4rpx solid lightgray;
-}
-
-.navigator_item{
-  width: 187.5rpx;
-  height: 150rpx;
-  float: left;
-}
-
-.navigator_image{
-  width: 82rpx;
-  height: 82rpx;
-  position: relative;
-  top: 5rpx;
-  left: 20rpx;
-}
-
-.navigator_text{
-  width: 150rpx;
-  height: 50rpx;
-  color:grey;
-  font-size: 14px;
-  font-family: 'Arial', Times, serif;
-  position: relative;
-  top: 10rpx;
-  left: 40rpx;
 }

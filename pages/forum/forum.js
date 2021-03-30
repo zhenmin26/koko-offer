@@ -5,7 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    swiper_pics: [
+      "pic1", "pic2", "pic3"
+    ],
+    icons: [
+      {pic: "icon1", name: "Business"},
+      {pic: "icon2", name: "CS"},
+      {pic: "icon3", name: "Job"},
+      {pic: "icon4", name: "Life"},
+      {pic: "icon5", name: "Other"},
+    ],
+    posts: [
+      {icon: "new",content: "Post 1",},
+      {icon: "hot",content: "Post 2"},
+      {icon: "hot",content: "Post 3"},
+      {icon: "new",content: "Post 4"},
+    ],
   },
 
   /**
@@ -62,23 +77,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  home_click: function () {
-    wx.navigateTo({
-      url: '../home/home',
-    })
-  },
-
-  learn_click: function () {
-    wx.navigateTo({
-      url: '../learn/learn',
-    })
-  },
-
-  setting_click: function () {
-    wx.navigateTo({
-      url: '../setting/setting',
-    })
   },
 })

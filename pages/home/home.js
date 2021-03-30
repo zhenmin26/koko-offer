@@ -5,7 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    records: [
+      {
+        id: 1,
+        title: "111",
+        status: 10,
+      },
+      {
+        id: 2,
+        title: "222",
+        status: 20,
+      },
+      {
+        id: 3,
+        title: "333",
+        status: 30,
+      },
+      {
+        id: 4,
+        title: "444",
+        status: 40,
+      },
+    ],
   },
 
   /**
@@ -62,23 +83,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  learn_click: function () {
-    wx.navigateTo({
-      url: '../learn/learn',
-    })
-  },
-
-  forum_click: function () {
-    wx.navigateTo({
-      url: '../forum/forum',
-    })
-  },
-
-  setting_click: function () {
-    wx.navigateTo({
-      url: '../setting/setting',
-    })
   },
 })

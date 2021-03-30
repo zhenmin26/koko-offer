@@ -5,107 +5,36 @@
     indicator-dots="true"
     autoplay="true"
     style='height:300rpx'>
-    <swiper-item>
-      <image style="width:750rpx;" src="/images/forum/pic1.jpeg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image style="width:750rpx;" src="/images/forum/pic2.jpeg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image style="width:750rpx;" src="/images/forum/pic3.jpeg"></image>
-    </swiper-item>
+    <block wx:for="{{swiper_pics}}" wx:key="index">
+      <swiper-item>
+        <image style="width:750rpx;" src="/images/forum/{{item}}.jpeg"></image>
+      </swiper-item>
+    </block>
   </swiper>
 </view>
 
+<!-- icon area -->
 <view class="icon_area">
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/forum/icon1.png"></image>
+  <block wx:for="{{icons}}" wx:key="index">
+    <view class="box_item">
+      <view class="box_img">
+        <image class="img_size" src="/images/forum/{{item.pic}}.png"></image>
+      </view>
+      <view class="box_text">
+        <view class="box_fontstyle">
+          {{item.name}}
+        </view>
+      </view>
     </view>
-    <view class="box_text">
-      Business
-    </view>
-  </view>
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/forum/icon2.png"></image>
-    </view>
-    <view class="box_text">
-      CS
-    </view>
-  </view>
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/forum/icon3.png"></image>
-    </view>
-    <view class="box_text">
-      Job
-    </view>
-  </view>
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/forum/icon4.png"></image>
-    </view>
-    <view class="box_text">
-      Life
-    </view>
-  </view>
-  <view class="box_item">
-    <view class="box_img">
-      <image class="box_img" src="/images/forum/icon5.png"></image>
-    </view>
-    <view class="box_text">
-      Other
-    </view>
-  </view>
+  </block>
 </view>
 
 <!-- post area -->
-<view class="post_box">
-  <view class="post_icon">
-    <image class="post_icon_pic" src="/images/forum/hot.png"></image>
+<block wx:for="{{posts}}" wx:key="index">
+  <view class="post_box">
+    <view class="post_icon">
+      <image class="post_icon_pic" src="/images/forum/{{item.icon}}.png"></image>
+    </view>
+  <view class="post_content">{{item.content}}</view>
   </view>
-  <view class="post_content">Post 1</view>
-</view>
-<view class="post_box">
-  <view class="post_icon">
-    <image class="post_icon_pic" src="/images/forum/new.png"></image>
-  </view>
-  <view class="post_content">Post 2</view>
-</view>
-
-<!-- Navigator bar-->
-<view class="navigator_area">
-  <view class="navigator_item" bindtap="home_click">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/home.png"></image>
-    </view>
-    <view class="navigator_text">
-      Home
-    </view>
-  </view>
-  <view class="navigator_item" bindtap="learn_click">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/stat.png"></image>
-    </view>
-    <view class="navigator_text">
-      Learn
-    </view>
-  </view>
-  <view class="navigator_item">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/forum.png"></image>
-    </view>
-    <view class="navigator_text">
-      Forum
-    </view>
-  </view>
-  <view class="navigator_item" bindtap="setting_click">
-    <view class="navigator_image">
-      <image class="navigator_image" src="/images/home/setting.png"></image>
-    </view>
-    <view class="navigator_text">
-      Setting
-    </view>
-  </view>
-</view>
+</block>
