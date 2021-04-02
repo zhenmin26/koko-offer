@@ -17,8 +17,6 @@ App({
         //发送code
         wx.request({
           url: 'https://api.luzhenmin.com/getcode',
-          // url: 'http://82.156.201.230/getcode',
-          // url: 'http://127.0.0.1/getcode',
           data: {
               abc: res.code
           },
