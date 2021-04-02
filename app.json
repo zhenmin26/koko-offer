@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/test/test",
     "pages/home/home",
     "pages/learn/learn",
     "pages/forum/forum",
     "pages/setting/setting",
-    "pages/test/test",
+
     "pages/record_more/record_more",
     "pages/record_add/record_add"
   ],

@@ -1,4 +1,6 @@
 <!--pages/test/test.wxml-->
-<text>{{id}}</text>
+<block wx:for="{{data}}" wx:key="index">
+  <view>{{item.title}}</view>
+</block>
 
-<view bindtap="aaa">点我</view>
+<buttom bindtap="aaa">点我</buttom>

@@ -1,23 +1,21 @@
 // pages/test/test.js
 Page({
-
+  // that : {},
   /**
    * 页面的初始数据
    */
   data: {
-    id: 100,
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("onload: message from test")
-    console.log(options.id)
+    console.log("onload: message from test");
+    // console.log(options.id);
     // // Page.data.id = options.id
-    this.setData({
-      id: options.id
-    })
+
   },
 
   /**
@@ -70,9 +68,20 @@ Page({
   },
 
   aaa: function(event){
-    console.log("哈哈哈")
-    this.setData({
-      id: 1111
+    let that = this;
+    console.log("onload: message from test");
+    // console.log(options.id);
+    // // Page.data.id = options.id
+    wx.request({
+      url: 'http://blogapi.zhangqx.com/bloglist',
+      success (res) {
+        console.log(res.data.data);
+        that.setData({
+          data: res.data.data,
+        })
+      }
     })
-  }
+  },
+
+  
 })
