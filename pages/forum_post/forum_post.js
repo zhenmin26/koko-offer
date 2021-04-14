@@ -1,25 +1,11 @@
-// pages/forum/forum.js
+// pages/forum_post/forum_post.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiper_pics: [
-      "pic1", "pic2", "pic3"
-    ],
-    icons: [
-      {pic: "icon1", name: "Business"},
-      {pic: "icon2", name: "CS"},
-      {pic: "icon3", name: "Job"},
-      {pic: "icon4", name: "Life"},
-      {pic: "icon5", name: "Other"},
-    ],
-    posts: [
-      {icon: "new",content: "Accounting to CS, what I experienced",},
-      {icon: "hot",content: "Must-knows in KoKo offer"},
-      {icon: "new",content: "Some tips for interview"},
-    ],
+
   },
 
   /**
@@ -76,5 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
+  }
 })

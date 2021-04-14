@@ -16,25 +16,28 @@
 <!-- icon area -->
 <view class="icon_area">
   <block wx:for="{{icons}}" wx:key="index">
-    <view class="box_item">
-      <view class="box_img">
-        <image class="img_size" src="/images/forum/{{item.pic}}.png"></image>
-      </view>
-      <view class="box_text">
-        <view class="box_fontstyle">
-          {{item.name}}
+      <view class="box_item">
+        <view class="box_img">
+          <image class="img_size" src="/images/forum/{{item.pic}}.png"></image>
+        </view>
+        <view class="box_text">
+          
+          <view class="box_fontstyle">
+            {{item.name}}
+          </view>
         </view>
       </view>
-    </view>
   </block>
 </view>
 
 <!-- post area -->
 <block wx:for="{{posts}}" wx:key="index">
-  <view class="post_box">
-    <view class="post_icon">
-      <image class="post_icon_pic" src="/images/forum/{{item.icon}}.png"></image>
+  <navigator url="/pages/forum_post/forum_post">
+    <view class="post_box">
+      <view class="post_icon">
+        <image class="post_icon_pic" src="/images/forum/{{item.icon}}.png"></image>
+      </view>
+      <view class="post_content">{{item.content}}</view>
     </view>
-  <view class="post_content">{{item.content}}</view>
-  </view>
+  </navigator>
 </block>

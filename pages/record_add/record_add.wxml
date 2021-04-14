@@ -3,3 +3,31 @@
 <view>
   <header headerIcon="home" headerText="New Record"></header>
 </view>
+
+<view class="section" style="background-color: tomato">
+  <view class="section__title">Choose your target</view>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      <view>Your choice: {{multiArray[0][multiIndex[0]]}} {{multiArray[2][multiIndex[2]]}}</view>
+    </view>
+  </picker>
+</view>
+
+<view style="background-color: lightblue">
+  Program: <input auto-focus placeholder="please type in" bindinput="titleInput"/>
+</view>
+
+<view style="background-color: orange">
+  Status: <input auto-focus placeholder="please type in" bindinput="statusInput"/>
+</view>
+
+<view class="section" style="background-color: lightgreen">
+  <view class="section__title">Update time</view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2099-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      Your choice: {{create_time}}
+    </view>
+  </picker>
+</view>
+
+<button bindtap="addOffer">submit</button>

@@ -11,18 +11,18 @@ Page({
       },
     ],
     articles: [
-      {
-        type: "video",
-        text: 111,
-      },
-      {
-        type: "music",
-        text: 222,
-      },
-      {
-        type: "article",
-        text: 333,
-      },
+      // {
+      //   type: "video",
+      //   title: 'how to set your goal',
+      // },
+      // {
+      //   type: "music",
+      //   title: 'soothing music',
+      // },
+      // {
+      //   type: "article",
+      //   title: 'practical tops for you!!!',
+      // }, 
     ],
   },
 
@@ -30,7 +30,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: 'https://api.luzhenmin.com/getLearnPost',
+      data: {
+        // id: (wx.getStorageSync('id') || 'err')
+      },
+      header: {
+        'content-type': 'application/json' //默认值
+      },
+      success: (res) => {
+        this.setData({
+          articles: res.data.data
+        })
+      }
+    })
   },
 
   /**
@@ -80,5 +93,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getPost: function (e) {
+    // console.log(e.currentTarget.dataset.index);
+    // 'title' is the title of the post
+    let title = e.currentTarget.dataset.title;
+    console.log(title)
+    wx.navigateTo({
+      url: '/pages/learn_post/learn_post?title=' + title,
+    })
   },
 })

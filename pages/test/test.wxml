@@ -4,3 +4,6 @@
 </block>
 
 <buttom bindtap="aaa">点我</buttom>
+
+<view>------------</view>
+{{id}}

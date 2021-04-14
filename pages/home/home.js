@@ -5,42 +5,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-    records: [
-      {
-        id: 1,
-        title: "111",
-        status: 10,
-      },
-      {
-        id: 2,
-        title: "222",
-        status: 20,
-      },
-      {
-        id: 3,
-        title: "333",
-        status: 30,
-      },
-      {
-        id: 4,
-        title: "444",
-        status: 40,
-      },
-    ],
+    id: 0,
+    records: [],
+    pic_name: 'content_icon',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //get offer info
+    wx.request({
+      url: 'https://api.luzhenmin.com/getOffer',
+      data: {
+          id: (wx.getStorageSync('id') || 'err')
+      },
+      header: {
+        'content-type': 'application/json' //默认值
+      },
+      success: (res) => {
+        this.setData({
+          records: res.data.data
+        })
+      }
+    })
+    //get pic name according to target company/school
+    // wx.request({
+    //   url: 'https://api.luzhenmin.com/getPic',
+    //   data: {
+    //       records: this.records
+    //   },
+    //   header: {
+    //     'content-type': 'application/json' //默认值
+    //   },
+    //   success: (res) => {
+    //     this.setData({
+    //       pic_name: res.data.data
+    //     })
+    //   }
+    // })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

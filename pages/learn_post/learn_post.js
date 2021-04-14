@@ -1,32 +1,33 @@
-// pages/forum/forum.js
+// pages/learn_post/learn_post.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiper_pics: [
-      "pic1", "pic2", "pic3"
-    ],
-    icons: [
-      {pic: "icon1", name: "Business"},
-      {pic: "icon2", name: "CS"},
-      {pic: "icon3", name: "Job"},
-      {pic: "icon4", name: "Life"},
-      {pic: "icon5", name: "Other"},
-    ],
-    posts: [
-      {icon: "new",content: "Accounting to CS, what I experienced",},
-      {icon: "hot",content: "Must-knows in KoKo offer"},
-      {icon: "new",content: "Some tips for interview"},
-    ],
+    title: '',
+    post_content:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.title)
+    wx.request({
+      url: 'https://api.luzhenmin.com/getLearnPostDetail',
+      data: {
+        title: options.title
+      },
+      header: {
+        'content-type': 'application/json' //默认值
+      },
+      success: (res) => {
+        this.setData({
+          post_content: res.data.data[0]
+        })
+      }
+    })
   },
 
   /**
@@ -76,5 +77,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
+  }
 })

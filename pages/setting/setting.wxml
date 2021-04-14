@@ -7,6 +7,14 @@
 <!-- setting area -->
 <view class="setting_box">
   <view class="setting_icon">
+    <image class="setting_icon_pic" style="width: 46rpx; height: 46rpx;" src="/images/setting/favorites.png"></image>
+  </view>
+  <view class="setting_content">
+    <view class="setting_content_text">Favorites</view>
+  </view>
+</view>
+<view class="setting_box">
+  <view class="setting_icon">
     <image class="setting_icon_pic" src="/images/setting/friend.png"></image>
   </view>
   <view class="setting_content">

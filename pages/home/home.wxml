@@ -24,14 +24,18 @@
     <block wx:for="{{records}}" wx:key="index">
       <!-- icon -->
       <view class="content_icon">
-        <image class="content_icon_pic" src="/images/home/content_icon{{item.id}}.png"></image>
+        <image class="content_icon_pic" src="/images/home/{{item.offer_target}}.png"></image>
       </view>
       <!-- body -->
       <view class="content_body">
         <view class="content_title">
           <view class="content_title_name">Title</view>
           <view class="content_title_box">
-            <view class="content_title_inbox">{{item.title}}</view>
+            <view class="content_title_inbox">
+              <text>{{item.offer_target}}</text>
+              <text>\t</text>
+              <text>{{item.offer_title}}</text>
+            </view>
           </view>
         </view>
         <view class="content_status">
@@ -51,12 +55,12 @@
   </view>
 </view>
 
-<block wx:for="{{array}}" wx:key="index">
+<!-- <block wx:for="{{array}}" wx:key="index">
   <navigator url="/pages/test/test?id={{item.id}}">
     <view style="border: solid 2px black;">
       <view> {{item.title}} </view>
       <view> {{item.num}} </view>
     </view>
   </navigator>
-</block>
+</block> -->
 

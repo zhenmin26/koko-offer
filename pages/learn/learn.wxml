@@ -24,10 +24,11 @@
       <view class="learn_inbox2_icon">
         <image class="learn_inbox2_icon_pic" src="/images/learn/{{item.type}}.png"></image>
       </view>
-      <view class="learn_inbox2_text">{{item.text}}</view>
-      <view class="learn_inbox2_enter">
-        <image class="learn_inbox2_enter_pic" src="/images/learn/enter.png"></image>
-      </view>
+      <view class="learn_inbox2_text">{{item.title}}</view>
+      <!-- <navigator url="/pages/learn_post/learn_post"> -->
+        <view class="learn_inbox2_enter" bindtap="getPost" data-title="{{item.title}}">
+          <image class="learn_inbox2_enter_pic" src="/images/learn/enter.png"></image>
+        </view>
     </view>
   </view>
 </block>
