@@ -46,11 +46,9 @@
         </view>
       </view>
       <!-- more -->
-      <navigator url="/pages/record_more/record_more?id=101">
-        <view class="content_more">
-          <image class="content_more_pic" src="/images/home/more.png"></image>
-        </view>
-      </navigator>
+      <view class="content_more" bindtap="getOfferDetail" data-offer_target="{{item.offer_target}}" data-offer_title="{{item.offer_title}}">
+        <image class="content_more_pic" src="/images/home/more.png"></image>
+      </view>
     </block>
   </view>
 </view>

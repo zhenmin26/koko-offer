@@ -94,4 +94,14 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  getOfferDetail: function (e) {
+    // console.log(e.currentTarget.dataset.offer_target);
+    let offer = {"offer_target": e.currentTarget.dataset.offer_target, "offer_title": e.currentTarget.dataset.offer_title};
+    // console.log(offer)
+    let offer_json = JSON.stringify(offer)
+    wx.navigateTo({
+      url: "/pages/record_more/record_more?offer=" + offer_json
+    })
+  },
 })

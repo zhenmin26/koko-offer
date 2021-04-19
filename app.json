@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/learn/learn",
-    "pages/home/home",
 
+    "pages/home/home",
+    "pages/learn/learn",
     "pages/forum/forum",
     "pages/setting/setting",
     "pages/test/test",
@@ -28,12 +28,6 @@
         "selectedIconPath": "/images/tabbar/learn_click.png",
         "pagePath": "pages/learn/learn",
         "text": "Learn"
-      },
-      {
-        "iconPath": "/images/tabbar/forum_unclick.png",
-        "selectedIconPath": "/images/tabbar/forum_click.png",
-        "pagePath": "pages/forum/forum",
-        "text": "Forum"
       },
       {
         "iconPath": "/images/tabbar/setting_unclick.png",

@@ -42,7 +42,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.16.0",
   "appid": "wx8edb2fbc40628f08",
-  "projectname": "offerManage",
+  "projectname": "koko-offer",
   "debugOptions": {
     "hidedInDevtools": []
   },

@@ -3,3 +3,16 @@
 <view>
   <header headerIcon="home" headerText="Details"></header>
 </view>
+<view style="background: lightblue">
+  <view>{{target_type}}</view>
+  <view>{{offer_target}}</view>
+  <view>{{offer_title}}</view>
+</view>
+
+<block wx:for="{{offer_content}}" wx:key="index">
+  <view>
+    <view>{{item.status}}</view>
+    <view>{{item.create_time}}</view>
+  </view>
+  <view>========================</view>
+</block>
