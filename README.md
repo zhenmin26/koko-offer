@@ -14,4 +14,6 @@ repository for koko offer
 3. offer详情页面添加了addRecord和deleteOffer两个功能
 * 遇到的问题：因为有三种不同类型的offer类型，每个类型用户选择的生成的数据类型和个数都不一样；tabbar页面不能用navigateTo来跳转
 * 解决方法：wx:if控制前端页面显示；后段也要根据不同的offer采用不同的接口，传递不同的数据；用switcTab来跳转会tabbar中的页面
-* 待解决问题：这周集中做了功能，还没有做页面样式
+* 待解决问题：
+1. 这周集中做了功能，还没有做页面样式
+2. nodejs文件需要进行相应的封装
