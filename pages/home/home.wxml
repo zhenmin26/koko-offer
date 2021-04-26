@@ -5,9 +5,8 @@
 </view>
 
 <!-- add new content -->
-
 <view class="add_area">
-  <navigator url="/pages/record_add/record_add?id=101">
+  <navigator url="/pages/record_new/record_new?id=101">
     <view class="add_icon">
       <image class="add_icon" src="/images/home/add.png"></image>
     </view>
@@ -17,6 +16,7 @@
   </view>
 </view>
 
+
 <!-- Content area -->
 <view>
   <!-- list all content -->
@@ -24,7 +24,15 @@
     <block wx:for="{{records}}" wx:key="index">
       <!-- icon -->
       <view class="content_icon">
-        <image class="content_icon_pic" src="/images/home/{{item.offer_target}}.png"></image>
+        <view wx:if="{{item.offer_type == 'job'}}">
+            <image class="content_icon_pic" src="/images/home/{{item.job_company}}.png"></image>
+        </view>
+        <view wx:if="{{item.offer_type == 'internship'}}">
+          <image class="content_icon_pic" src="/images/home/{{item.internship_company}}.png"></image>
+        </view>
+        <view wx:if="{{item.offer_type == 'further study'}}">
+          <image class="content_icon_pic" src="/images/home/{{item.study_school}}.png"></image>
+        </view>
       </view>
       <!-- body -->
       <view class="content_body">
@@ -32,9 +40,20 @@
           <view class="content_title_name">Title</view>
           <view class="content_title_box">
             <view class="content_title_inbox">
-              <text>{{item.offer_target}}</text>
-              <text>\t</text>
-              <text>{{item.offer_title}}</text>
+              <view wx:if="{{item.offer_type == 'job'}}">
+                {{item.job_company}}
+                {{item.job_position}}
+              </view>
+              <view wx:if="{{item.offer_type == 'internship'}}">
+                {{item.internship_company}}
+                {{item.internship_position}}
+                {{item.internship_type}}
+              </view>
+              <view wx:if="{{item.offer_type == 'further study'}}">
+                {{item.study_type}}
+                {{item.study_school}}
+                {{item.study_major}}
+              </view>
             </view>
           </view>
         </view>
@@ -46,19 +65,41 @@
         </view>
       </view>
       <!-- more -->
-      <view class="content_more" bindtap="getOfferDetail" data-offer_target="{{item.offer_target}}" data-offer_title="{{item.offer_title}}">
+      <view wx:if="{{item.offer_type == 'job'}}">
+        <view class="content_more" bindtap="getOfferDetail" data-offer_type="job" data-job_company="{{item.job_company}}" data-job_position="{{item.job_position}}">
         <image class="content_more_pic" src="/images/home/more.png"></image>
+        </view>
+      </view>
+      <view wx:if="{{item.offer_type == 'internship'}}">
+        <view class="content_more" bindtap="getOfferDetail" data-offer_type="internship" data-internship_company="{{item.internship_company}}" data-internship_position="{{item.internship_position}}" data-internship_type="{{item.internship_type}}">
+        <image class="content_more_pic" src="/images/home/more.png"></image>
+        </view>
+      </view>
+      <view wx:if="{{item.offer_type == 'further study'}}">
+        <view class="content_more" bindtap="getOfferDetail" data-offer_type="further study" data-study_school="{{item.study_school}}" data-study_type="{{item.study_type}}" data-study_major="{{item.study_major}}">
+        <image class="content_more_pic" src="/images/home/more.png"></image>
+        </view>
       </view>
     </block>
   </view>
 </view>
 
-<!-- <block wx:for="{{array}}" wx:key="index">
-  <navigator url="/pages/test/test?id={{item.id}}">
-    <view style="border: solid 2px black;">
-      <view> {{item.title}} </view>
-      <view> {{item.num}} </view>
-    </view>
-  </navigator>
-</block> -->
 
+<!--content area-->
+<!-- <block wx:for="{{records}}" wx:key="index">
+  <view wx:if="{{item.offer_type == 'job'}}">
+    {{item.job_company}}
+    {{item.job_position}}
+  </view>
+  <view wx:if="{{item.offer_type == 'internship'}}">
+    {{item.internship_company}}
+    {{item.internship_position}}
+    {{item.internship_type}}
+  </view>
+  <view wx:if="{{item.offer_type == 'further study'}}">
+    {{item.study_type}}
+    {{item.study_school}}
+    {{item.study_major}}
+  </view>
+  <view>{{item.status}}</view>
+</block> -->

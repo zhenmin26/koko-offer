@@ -6,7 +6,7 @@
 
 <!-- learn area -->
 <view class="intro">
-  Here you may find some interesting vedios or soothing music to release your stress, and some practical articles.
+  Here you may find some interesting videos or soothing music to release your stress, and some practical articles.
 </view>
 <block wx:for="{{tops}}" wx:key="index">
   <view class="learn_box1">

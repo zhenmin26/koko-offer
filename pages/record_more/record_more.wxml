@@ -3,16 +3,29 @@
 <view>
   <header headerIcon="home" headerText="Details"></header>
 </view>
-<view style="background: lightblue">
-  <view>{{target_type}}</view>
-  <view>{{offer_target}}</view>
-  <view>{{offer_title}}</view>
-</view>
 
-<block wx:for="{{offer_content}}" wx:key="index">
-  <view>
+<button bindtap="addRecord" data-records="{{records}}">增加一条记录</button>
+<button bindtap="deleteOffer" data-records="{{records}}">删除该offer记录</button>
+
+<block wx:for="{{records}}" wx:key="index">
+  <view wx:if="{{item.offer_type == 'job'}}">
+    <view>{{item.job_company}}</view>
+    <view>{{item.job_position}}</view>
     <view>{{item.status}}</view>
     <view>{{item.create_time}}</view>
   </view>
-  <view>========================</view>
+  <view wx:if="{{item.offer_type == 'internship'}}">
+    <view>{{item.internship_company}}</view>
+    <view>{{item.internship_position}}</view>
+    <view>{{item.internship_type}}</view>
+    <view>{{item.status}}</view>
+    <view>{{item.create_time}}</view>
+  </view>
+  <view wx:if="{{item.offer_type == 'further study'}}">
+    <view>{{item.study_school}}</view>
+    <view>{{item.study_type}}</view>
+    <view>{{item.study_major}}</view>
+    <view>{{item.status}}</view>
+    <view>{{item.create_time}}</view>
+  </view>
 </block>

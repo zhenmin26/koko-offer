@@ -1,26 +1,31 @@
 <!--pages/record_add/record_add.wxml-->
 <!-- header bar -->
 <view>
-  <header headerIcon="home" headerText="New Record"></header>
+  <header headerIcon="home" headerText="Add record"></header>
 </view>
 
-<view class="section" style="background-color: tomato">
-  <view class="section__title">Choose your target</view>
-  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+<view wx:if="{{record[0].offer_type == 'job'}}">
+  <view>{{record[0].job_company}}</view>
+  <view>{{record[0].job_position}}</view>
+</view>
+<view wx:if="{{record[0].offer_type == 'internship'}}">
+  <view>{{record[0].internship_company}}</view>
+  <view>{{record[0].internship_position}}</view>
+  <view>{{record[0].internship_type}}</view>
+</view>
+<view wx:if="{{record[0].offer_type == 'further study'}}">
+  <view>{{record[0].study_school}}</view>
+  <view>{{record[0].study_type}}</view>
+  <view>{{record[0].study_major}}</view>
+</view>
+<view class="section" style="background-color: lightblue">
+  <view class="section__title">Status</view>
+  <picker bindchange="bindPickerChangeOfStatus" value="{{indexOfStatus}}" range="{{status}}">
     <view class="picker">
-      <view>Your choice: {{multiArray[0][multiIndex[0]]}} {{multiArray[2][multiIndex[2]]}}</view>
+      Your choice：{{status[indexOfStatus]}}
     </view>
   </picker>
 </view>
-
-<view style="background-color: lightblue">
-  Program: <input auto-focus placeholder="please type in" bindinput="titleInput"/>
-</view>
-
-<view style="background-color: orange">
-  Status: <input auto-focus placeholder="please type in" bindinput="statusInput"/>
-</view>
-
 <view class="section" style="background-color: lightgreen">
   <view class="section__title">Update time</view>
   <picker mode="date" value="{{date}}" start="2015-09-01" end="2099-09-01" bindchange="bindDateChange">
@@ -29,5 +34,5 @@
     </view>
   </picker>
 </view>
+<button bindtap="addRecord">添加记录</button>
 
-<button bindtap="addOffer">submit</button>

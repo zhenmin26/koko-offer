@@ -11,18 +11,6 @@ Page({
       },
     ],
     articles: [
-      // {
-      //   type: "video",
-      //   title: 'how to set your goal',
-      // },
-      // {
-      //   type: "music",
-      //   title: 'soothing music',
-      // },
-      // {
-      //   type: "article",
-      //   title: 'practical tops for you!!!',
-      // }, 
     ],
   },
 

@@ -6,7 +6,7 @@ Page({
    */
   data: {
     id: 0,
-    records: [],
+    records:[],
     pic_name: 'content_icon',
   },
 
@@ -14,36 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //get offer info
-    wx.request({
-      url: 'https://api.luzhenmin.com/getOffer',
-      data: {
-          id: (wx.getStorageSync('id') || 'err')
-      },
-      header: {
-        'content-type': 'application/json' //默认值
-      },
-      success: (res) => {
-        this.setData({
-          records: res.data.data
-        })
-      }
-    })
-    //get pic name according to target company/school
-    // wx.request({
-    //   url: 'https://api.luzhenmin.com/getPic',
-    //   data: {
-    //       records: this.records
-    //   },
-    //   header: {
-    //     'content-type': 'application/json' //默认值
-    //   },
-    //   success: (res) => {
-    //     this.setData({
-    //       pic_name: res.data.data
-    //     })
-    //   }
-    // })
+
   },
 
   /**
@@ -57,7 +28,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    //get offer info
+    wx.request({
+      url: 'https://api.luzhenmin.com/getOffer',
+      data: {
+          userid: (wx.getStorageSync('id') || 'err')
+      },
+      header: {
+        'content-type': 'application/json' //默认值
+      },
+      success: (res) => {
+        this.setData({
+          records: res.data.data
+        })
+      }
+    })
   },
 
   /**
@@ -97,7 +82,30 @@ Page({
 
   getOfferDetail: function (e) {
     // console.log(e.currentTarget.dataset.offer_target);
-    let offer = {"offer_target": e.currentTarget.dataset.offer_target, "offer_title": e.currentTarget.dataset.offer_title};
+    let offer = {};
+    if(e.currentTarget.dataset.offer_type == "job"){
+      offer = {
+        "offer_type": e.currentTarget.dataset.offer_type,
+        "job_company": e.currentTarget.dataset.job_company,
+        "job_position": e.currentTarget.dataset.job_position
+      };
+    }
+    if(e.currentTarget.dataset.offer_type == "internship"){
+      offer = {
+        "offer_type": e.currentTarget.dataset.offer_type,
+        "internship_company": e.currentTarget.dataset.internship_company,
+        "internship_position": e.currentTarget.dataset.internship_position,
+        "internship_type": e.currentTarget.dataset.internship_type
+      };
+    }
+    if(e.currentTarget.dataset.offer_type == "further study"){
+      offer = {
+        "offer_type": e.currentTarget.dataset.offer_type,
+        "study_school": e.currentTarget.dataset.study_school,
+        "study_type": e.currentTarget.dataset.study_type,
+        "study_major": e.currentTarget.dataset.study_major
+      };
+    }
     // console.log(offer)
     let offer_json = JSON.stringify(offer)
     wx.navigateTo({
