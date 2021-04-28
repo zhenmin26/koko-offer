@@ -77,7 +77,7 @@
   width: 500rpx;
   height: 80rpx;
   box-sizing: border-box;
-  padding-top: 25rpx;
+  padding-top: 18rpx;
   float: left;
   font-family: Arial, Helvetica, sans-serif;
   word-spacing: -0.8px;

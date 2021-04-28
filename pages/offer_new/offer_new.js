@@ -369,7 +369,7 @@ Page({
 
   //添加offer到数据库
   addOffer: function(event){
-    console.log(this.data)
+    // console.log(this.data)
     wx.request({
       url: 'https://api.luzhenmin.com/addOffer',
       data: {
@@ -392,10 +392,21 @@ Page({
         'content-type': 'application/json' //默认值
       },
       success: (res) => {
-        console.log("insert into database successfully")
-        wx.navigateBack({
-          delta: 0,
-        })
+        wx.showToast({
+          title: "success",
+          icon: 'success',
+          duration: 1000,
+          complete:()=>{
+            setTimeout(
+              ()=> {
+                wx.navigateBack({
+                  delta: 0,
+                })
+              },
+              1000
+            )
+          }
+        })        
       }
     })
   },

@@ -38,6 +38,7 @@ Page({
         'content-type': 'application/json' //默认值
       },
       success: (res) => {
+        console.log(res.data.data)
         this.setData({
           records: res.data.data
         })
@@ -109,7 +110,7 @@ Page({
     // console.log(offer)
     let offer_json = JSON.stringify(offer)
     wx.navigateTo({
-      url: "/pages/record_more/record_more?offer=" + offer_json
+      url: "/pages/offer_more/offer_more?offer=" + offer_json
     })
   },
 })

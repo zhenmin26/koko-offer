@@ -1,0 +1,90 @@
+/* pages/record_more/record_more.wxss */
+.button_area{
+  width: 750rpx;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  /* margin-top: 15rpx; */
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.botton_outerBox{
+  box-sizing: content-box;
+  margin: 15rpx;
+}
+
+.button_add{
+  background-color: rgb(115, 201, 139);
+  font-size: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.button_delete{
+  /* background-color: rgb(243, 156, 18); */
+  background-color: #e6bd1cea;
+  font-size: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.offerinfo_outerBox{
+  box-sizing: content-box;
+  padding: 20rpx 20rpx 0rpx 20rpx;
+}
+
+.offerInfo{
+  color: gray;
+  display: flex;
+  justify-content: center;
+}
+
+.offerInfo_text{
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  font-size: 20px;
+  color: rgb(59, 55, 55);
+  font-weight: 600;
+}
+
+.record_outerbox{
+  height: 120rpx;
+  display: flex;
+  padding-top: 20rpx;
+  padding-left: 60rpx;
+  justify-content: flex-start;
+}
+
+.img{
+  margin-top: 2.5px;
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.record_box{
+  width: 500rpx;
+  height: 100rpx;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.for_box{
+  width: 500rpx;
+  padding: 5px 5px 5px 8px;
+  border: lightgray solid 4px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+}
+
+.record_status{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.record_time{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5px;
+  font-size: 16px;
+}

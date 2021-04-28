@@ -1,1 +1,32 @@
 /* pages/learn_post/learn_post.wxss */
+.title{
+  padding-top:50rpx;
+  height: 58rpx;
+  font-size: 40rpx;
+  font-weight: 550;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.divLine{
+  position: absolute;
+  left: 10%;
+  background: #E0E3DA;
+  width: 80%;
+  height: 5rpx;
+}
+
+.content{
+  box-sizing: border-box;
+  width: 84%;
+  position: absolute;
+  left: 8%;
+  padding-top: 8rpx;
+}
+
+.content_text{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15rpx;
+}

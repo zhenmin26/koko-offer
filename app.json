@@ -1,14 +1,15 @@
 {
   "pages": [
+
     "pages/home/home",
     "pages/learn/learn",
     "pages/forum/forum",
     "pages/setting/setting",
     "pages/test/test",
-    "pages/record_more/record_more",
+    "pages/offer_more/offer_more",
     "pages/forum_post/forum_post",
     "pages/learn_post/learn_post",
-    "pages/record_new/record_new",
+    "pages/offer_new/offer_new",
     "pages/record_add/record_add"
     
   ],

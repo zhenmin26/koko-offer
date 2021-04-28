@@ -6,7 +6,7 @@
 
 <!-- add new content -->
 <view class="add_area">
-  <navigator url="/pages/record_new/record_new?id=101">
+  <navigator url="/pages/offer_new/offer_new?id=101">
     <view class="add_icon">
       <image class="add_icon" src="/images/home/add.png"></image>
     </view>
@@ -16,11 +16,13 @@
   </view>
 </view>
 
-
 <!-- Content area -->
 <view>
   <!-- list all content -->
   <view class="content_area">
+    <block wx:if="{{records.length==0}}">
+      <view class="tip">点击上方按钮添加自己的记录吧~~~</view>
+    </block>
     <block wx:for="{{records}}" wx:key="index">
       <!-- icon -->
       <view class="content_icon">

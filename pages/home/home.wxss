@@ -1,5 +1,12 @@
 /* pages/home/home.wxss */
 /* add new content */
+.tip{
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+  color: gray;
+}
+
 .add_area{
   width: 750rpx;
   height: 75rpx;

@@ -3,36 +3,43 @@
 <view>
   <header headerIcon="home" headerText="Add record"></header>
 </view>
-
-<view wx:if="{{record[0].offer_type == 'job'}}">
-  <view>{{record[0].job_company}}</view>
-  <view>{{record[0].job_position}}</view>
+<view style="padding: 10rpx;"></view>
+<!-- <view class="top">Current offer:</view> -->
+<view class="offerinfo_outerBox">
+  <view wx:if="{{record[0].offer_type == 'job'}}" class="offerInfo">
+    <view class="offerInfo_text">{{record[0].job_company}}</view>
+    <view class="offerInfo_text">{{record[0].job_position}}</view>
+  </view>
+  <view wx:if="{{record[0].offer_type == 'internship'}}" class="offerInfo">
+    <view class="offerInfo_text">{{record[0].internship_company}}</view>
+    <view class="offerInfo_text">{{record[0].internship_position}}</view>
+    <view class="offerInfo_text">{{record[0].internship_type}}</view>
+  </view>
+  <view wx:if="{{record[0].offer_type == 'further study'}}" class="offerInfo">
+    <view class="offerInfo_text">{{record[0].study_school}}</view>
+    <view class="offerInfo_text">{{record[0].study_type}}</view>
+    <view class="offerInfo_text">{{record[0].study_major}}</view>
+  </view>
 </view>
-<view wx:if="{{record[0].offer_type == 'internship'}}">
-  <view>{{record[0].internship_company}}</view>
-  <view>{{record[0].internship_position}}</view>
-  <view>{{record[0].internship_type}}</view>
+<view class="outer_section">
+  <view class="section">
+    <view class="section__title">Status</view>
+    <picker bindchange="bindPickerChangeOfStatus" value="{{indexOfStatus}}" range="{{status}}">
+      <view class="picker">
+        Your choice：{{status[indexOfStatus]}}
+      </view>
+    </picker>
+  </view>
 </view>
-<view wx:if="{{record[0].offer_type == 'further study'}}">
-  <view>{{record[0].study_school}}</view>
-  <view>{{record[0].study_type}}</view>
-  <view>{{record[0].study_major}}</view>
+<view class="outer_section">
+  <view class="section">
+    <view class="section__title">Update time</view>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2099-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        Your choice: {{create_time}}
+      </view>
+    </picker>
+  </view>
 </view>
-<view class="section" style="background-color: lightblue">
-  <view class="section__title">Status</view>
-  <picker bindchange="bindPickerChangeOfStatus" value="{{indexOfStatus}}" range="{{status}}">
-    <view class="picker">
-      Your choice：{{status[indexOfStatus]}}
-    </view>
-  </picker>
-</view>
-<view class="section" style="background-color: lightgreen">
-  <view class="section__title">Update time</view>
-  <picker mode="date" value="{{date}}" start="2015-09-01" end="2099-09-01" bindchange="bindDateChange">
-    <view class="picker">
-      Your choice: {{create_time}}
-    </view>
-  </picker>
-</view>
-<button bindtap="addRecord">添加记录</button>
+<button bindtap="addRecord" class="button">添加记录</button>
 

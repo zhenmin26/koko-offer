@@ -1,5 +1,7 @@
 <!--pages/learn_post/learn_post.wxml-->
-<view>{{post_content.title}}</view>
-<view>{{post_content.content}}</view>
-<view>{{post_content.favorite_count}}</view>
+<view class="title">{{post_content.title}}</view>
+<view class="divLine"></view>
+<view class="content">
+  <view>{{post_content.content}}</view>
+</view>
 

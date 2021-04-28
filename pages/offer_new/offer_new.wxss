@@ -1,31 +1,6 @@
-/* pages/record_add/record_add.wxss */
 /* pages/record_new/record_new.wxss */
 .top{
-  box-sizing: border-box;
-  margin-top: 15rpx;
-  padding-left: 20rpx;
-  font-size: 22px;
-  color: gray;
-  font-weight: 500;
-}
-
-.offerinfo_outerBox{
-  box-sizing: content-box;
-  padding: 10rpx;
-}
-
-.offerInfo{
-  color: gray;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.offerInfo_text{
-  box-sizing: border-box;
-  padding-left: 20rpx;
-  font-size: 18px;
-  color: rgb(59, 55, 55);
-  font-weight: 500;
+  margin: 15rpx;
 }
 
 .outer_section{
