@@ -111,7 +111,7 @@ Page({
   },
 
   addRecord: function(event) {
-    console.log((this.data.record[this.data.record.length-1]).number)
+    console.log(this.data.record[0].link_offer);
     if(this.data.record[0].offer_type == 'job'){
       wx.request({
         url: 'https://api.luzhenmin.com/addRecord',
@@ -120,6 +120,7 @@ Page({
           offer_type: this.data.record[0].offer_type,
           job_company: this.data.record[0].job_company,
           job_position: this.data.record[0].job_position,
+          link_offer: this.data.record[0].link_offer,
           status: this.data.status[this.data.indexOfStatus],
           create_time: this.data.create_time,
           number: (this.data.record[this.data.record.length-1]).number
@@ -144,6 +145,7 @@ Page({
           internship_company: this.data.record[0].internship_company,
           internship_position: this.data.record[0].internship_position,
           internship_type: this.data.record[0].internship_type,
+          link_offer: this.data.record[0].link_offer,
           status: this.data.status[this.data.indexOfStatus],
           create_time: this.data.create_time,
           number: (this.data.record[this.data.record.length-1]).number
@@ -168,6 +170,7 @@ Page({
           study_school: this.data.record[0].study_school,
           study_type: this.data.record[0].study_type,
           study_major: this.data.record[0].study_major,
+          link_offer: this.data.record[0].link_offer,
           status: this.data.status[this.data.indexOfStatus],
           create_time: this.data.create_time,
           number: (this.data.record[this.data.record.length-1]).number

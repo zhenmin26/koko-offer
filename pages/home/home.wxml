@@ -1,4 +1,5 @@
 <!--pages/home/home.wxml-->
+
 <!-- header bar -->
 <view>
   <header headerIcon="home" headerText="Your Offer Record"></header>
@@ -20,7 +21,14 @@
 <view>
   <!-- list all content -->
   <view class="content_area">
-    <block wx:if="{{records.length==0}}">
+    <block wx:if="{{records == null}}">
+      <view class="page">
+          <view class="page__bd">
+              <mp-loading type="circle" tips="{{tips}}"></mp-loading>
+          </view>
+      </view>
+    </block>
+    <block wx:if="{{no_record}}">
       <view class="tip">点击上方按钮添加自己的记录吧~~~</view>
     </block>
     <block wx:for="{{records}}" wx:key="index">
@@ -68,40 +76,20 @@
       </view>
       <!-- more -->
       <view wx:if="{{item.offer_type == 'job'}}">
-        <view class="content_more" bindtap="getOfferDetail" data-offer_type="job" data-job_company="{{item.job_company}}" data-job_position="{{item.job_position}}">
+        <view class="content_more" bindtap="getOfferDetail" data-offer_type="job" data-offer_link="{{item.link_offer}}" data-job_company="{{item.job_company}}" data-job_position="{{item.job_position}}">
         <image class="content_more_pic" src="/images/home/more.png"></image>
         </view>
       </view>
       <view wx:if="{{item.offer_type == 'internship'}}">
-        <view class="content_more" bindtap="getOfferDetail" data-offer_type="internship" data-internship_company="{{item.internship_company}}" data-internship_position="{{item.internship_position}}" data-internship_type="{{item.internship_type}}">
+        <view class="content_more" bindtap="getOfferDetail" data-offer_type="internship" data-offer_link="{{item.link_offer}}" data-internship_company="{{item.internship_company}}" data-internship_position="{{item.internship_position}}" data-internship_type="{{item.internship_type}}">
         <image class="content_more_pic" src="/images/home/more.png"></image>
         </view>
       </view>
       <view wx:if="{{item.offer_type == 'further study'}}">
-        <view class="content_more" bindtap="getOfferDetail" data-offer_type="further study" data-study_school="{{item.study_school}}" data-study_type="{{item.study_type}}" data-study_major="{{item.study_major}}">
+        <view class="content_more" bindtap="getOfferDetail" data-offer_type="further study" data-offer_link="{{item.link_offer}}" data-study_school="{{item.study_school}}" data-study_type="{{item.study_type}}" data-study_major="{{item.study_major}}">
         <image class="content_more_pic" src="/images/home/more.png"></image>
         </view>
       </view>
     </block>
   </view>
 </view>
-
-
-<!--content area-->
-<!-- <block wx:for="{{records}}" wx:key="index">
-  <view wx:if="{{item.offer_type == 'job'}}">
-    {{item.job_company}}
-    {{item.job_position}}
-  </view>
-  <view wx:if="{{item.offer_type == 'internship'}}">
-    {{item.internship_company}}
-    {{item.internship_position}}
-    {{item.internship_type}}
-  </view>
-  <view wx:if="{{item.offer_type == 'further study'}}">
-    {{item.study_type}}
-    {{item.study_school}}
-    {{item.study_major}}
-  </view>
-  <view>{{item.status}}</view>
-</block> -->

@@ -73,7 +73,7 @@
     <view class="tip_text">必须要先选offer类型噢~~~</view>
   </block>
 </block>
-
+<!-- status -->
   <block wx:if="{{indexOfOfferType != 0}}">
     <view class="outer_section">
       <view class="section">
@@ -85,6 +85,7 @@
         </picker>
       </view>
     </view>
+    <!-- time -->
     <view class="outer_section">
       <view class="section">
         <view class="section__title">Update time</view>

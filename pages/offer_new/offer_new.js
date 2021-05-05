@@ -370,44 +370,107 @@ Page({
   //添加offer到数据库
   addOffer: function(event){
     // console.log(this.data)
-    wx.request({
-      url: 'https://api.luzhenmin.com/addOffer',
-      data: {
-        userid: (wx.getStorageSync('id') || 'err'),
-        // multiArray: this.data.multiArray,
-        // multiIndex: this.data.multiIndex,
-        offer_type: this.data.offerType[this.data.indexOfOfferType],
-        job_company: this.data.multiArrayOfJob[0][this.data.multiIndexOfJob[0]],
-        job_position: this.data.multiArrayOfJob[1][this.data.multiIndexOfJob[1]],
-        internship_company: this.data.multiArrayOfInternship[0][this.data.multiIndexOfInternship[0]],
-        internship_position: this.data.multiArrayOfInternship[1][this.data.multiIndexOfInternship[1]],
-        internship_type: this.data.multiArrayOfInternship[2][this.data.multiIndexOfInternship[2]],
-        study_school: this.data.school[this.data.indexOfSchool],
-        study_type: this.data.multiArrayOfStudy[0][this.data.multiIndexOfStudy[0]],
-        study_major:this.data.multiArrayOfStudy[1][this.data.multiIndexOfStudy[1]],
-        status: this.data.status[this.data.indexOfStatus],
-        create_time: this.data.create_time
-      },
-      header: {
-        'content-type': 'application/json' //默认值
-      },
-      success: (res) => {
-        wx.showToast({
-          title: "success",
-          icon: 'success',
-          duration: 1000,
-          complete:()=>{
-            setTimeout(
-              ()=> {
-                wx.navigateBack({
-                  delta: 0,
-                })
-              },
-              1000
-            )
-          }
-        })        
-      }
-    })
+    if(this.data.offerType[this.data.indexOfOfferType] == "job"){
+      wx.request({
+        url: 'https://api.luzhenmin.com/addJobOffer',
+        data: {
+          userid: (wx.getStorageSync('id') || 'err'),
+          offer_type: this.data.offerType[this.data.indexOfOfferType],
+          job_company: this.data.multiArrayOfJob[0][this.data.multiIndexOfJob[0]],
+          job_position: this.data.multiArrayOfJob[1][this.data.multiIndexOfJob[1]],
+          status: this.data.status[this.data.indexOfStatus],
+          create_time: this.data.create_time
+        },
+        header: {
+          'content-type': 'application/json' //默认值
+        },
+        success: (res) => {
+          wx.showToast({
+            title: "success",
+            icon: 'success',
+            duration: 1000,
+            complete:()=>{
+              setTimeout(
+                ()=> {
+                  wx.navigateBack({
+                    delta: 0,
+                  })
+                },
+                1000
+              )
+            }
+          })        
+        }
+      })
+    }
+    if(this.data.offerType[this.data.indexOfOfferType] == "internship"){
+      wx.request({
+        url: 'https://api.luzhenmin.com/addInternshipOffer',
+        data: {
+          userid: (wx.getStorageSync('id') || 'err'),
+          offer_type: this.data.offerType[this.data.indexOfOfferType],
+          internship_company: this.data.multiArrayOfInternship[0][this.data.multiIndexOfInternship[0]],
+          internship_position: this.data.multiArrayOfInternship[1][this.data.multiIndexOfInternship[1]],
+          internship_type: this.data.multiArrayOfInternship[2][this.data.multiIndexOfInternship[2]],
+          status: this.data.status[this.data.indexOfStatus],
+          create_time: this.data.create_time
+        },
+        header: {
+          'content-type': 'application/json' //默认值
+        },
+        success: (res) => {
+          wx.showToast({
+            title: "success",
+            icon: 'success',
+            duration: 1000,
+            complete:()=>{
+              setTimeout(
+                ()=> {
+                  wx.navigateBack({
+                    delta: 0,
+                  })
+                },
+                1000
+              )
+            }
+          })        
+        }
+      })
+    }
+    if(this.data.offerType[this.data.indexOfOfferType] == "further study"){
+      wx.request({
+        url: 'https://api.luzhenmin.com/addStudyOffer',
+        data: {
+          userid: (wx.getStorageSync('id') || 'err'),
+          offer_type: this.data.offerType[this.data.indexOfOfferType],
+          study_school: this.data.school[this.data.indexOfSchool],
+          study_type: this.data.multiArrayOfStudy[0][this.data.multiIndexOfStudy[0]],
+          study_major:this.data.multiArrayOfStudy[1][this.data.multiIndexOfStudy[1]],
+          status: this.data.status[this.data.indexOfStatus],
+          create_time: this.data.create_time
+        },
+        header: {
+          'content-type': 'application/json' //默认值
+        },
+        success: (res) => {
+          wx.showToast({
+            title: "success",
+            icon: 'success',
+            duration: 1000,
+            complete:()=>{
+              setTimeout(
+                ()=> {
+                  wx.navigateBack({
+                    delta: 0,
+                  })
+                },
+                1000
+              )
+            }
+          })        
+        }
+      })
+    }
+    
   },
 })

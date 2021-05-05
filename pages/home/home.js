@@ -1,20 +1,23 @@
 // pages/home/home.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    id: 0,
-    records:[],
-    pic_name: 'content_icon',
+    no_record: false,
+    records: null,
+    tips: 'Loading',
+    // show: true,
+    // animated: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -28,21 +31,36 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //get offer info
-    wx.request({
-      url: 'https://api.luzhenmin.com/getOffer',
-      data: {
-          userid: (wx.getStorageSync('id') || 'err')
-      },
-      header: {
-        'content-type': 'application/json' //默认值
-      },
-      success: (res) => {
-        console.log(res.data.data)
-        this.setData({
-          records: res.data.data
-        })
-      }
+    // console.log("get offer")
+    var that = this;
+    app.getOpenid().then(function(res){
+        if(res.status == 200){
+          wx.request({
+            url: 'https://api.luzhenmin.com/getOffer',
+            data: {
+              userid: wx.getStorageSync('id') || 'err'
+            },
+            header: {
+              'content-type': 'application/json' //默认值
+            },
+            success: (res) => {
+              // console.log(res.data.data)
+              if((res.data.data).length==0){
+                that.setData({
+                  no_record: true
+                })
+              }else{
+                that.setData({
+                  no_record: false,
+                  records: res.data.data
+                })
+              }
+            }
+          })
+        }
+        else{
+          console.log(res.data)
+        }
     })
   },
 
@@ -57,7 +75,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    clearInterval(this.timer)
   },
 
   /**
@@ -86,6 +104,7 @@ Page({
     let offer = {};
     if(e.currentTarget.dataset.offer_type == "job"){
       offer = {
+        "link_offer": e.currentTarget.dataset.offer_link,
         "offer_type": e.currentTarget.dataset.offer_type,
         "job_company": e.currentTarget.dataset.job_company,
         "job_position": e.currentTarget.dataset.job_position
@@ -93,6 +112,7 @@ Page({
     }
     if(e.currentTarget.dataset.offer_type == "internship"){
       offer = {
+        "link_offer": e.currentTarget.dataset.offer_link,
         "offer_type": e.currentTarget.dataset.offer_type,
         "internship_company": e.currentTarget.dataset.internship_company,
         "internship_position": e.currentTarget.dataset.internship_position,
@@ -101,6 +121,7 @@ Page({
     }
     if(e.currentTarget.dataset.offer_type == "further study"){
       offer = {
+        "link_offer": e.currentTarget.dataset.offer_link,
         "offer_type": e.currentTarget.dataset.offer_type,
         "study_school": e.currentTarget.dataset.study_school,
         "study_type": e.currentTarget.dataset.study_type,

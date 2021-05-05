@@ -32,7 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // console.log(this.data.offer)
+    console.log(this.data.offer)
     if(this.data.offer.offer_type == "job"){
       wx.request({
         url: 'https://api.luzhenmin.com/getOfferDetail',
@@ -40,13 +40,14 @@ Page({
           userid: (wx.getStorageSync('id') || 'err'),
           offer_type: this.data.offer.offer_type,
           job_company: this.data.offer.job_company,
-          job_position: this.data.offer.job_position
+          job_position: this.data.offer.job_position,
+          link_offer: this.data.offer.link_offer
         },
         header: {
           'content-type': 'application/json' //默认值
         },
         success: (res) => {
-          console.log(res.data)
+          // console.log(res.data)
           this.setData({
             records: res.data.data,
           })
@@ -61,13 +62,14 @@ Page({
           offer_type: this.data.offer.offer_type,
           internship_company: this.data.offer.internship_company,
           internship_position: this.data.offer.internship_position,
-          internship_type: this.data.offer.internship_type
+          internship_type: this.data.offer.internship_type,
+          link_offer: this.data.offer.link_offer
         },
         header: {
           'content-type': 'application/json' //默认值
         },
         success: (res) => {
-          console.log(res.data)
+          // console.log(res.data)
           this.setData({
             records: res.data.data,
           })
@@ -82,13 +84,14 @@ Page({
           offer_type: this.data.offer.offer_type,
           study_school: this.data.offer.study_school,
           study_type: this.data.offer.study_type,
-          study_major: this.data.offer.study_major
+          study_major: this.data.offer.study_major,
+          link_offer: this.data.offer.link_offer
         },
         header: {
           'content-type': 'application/json' //默认值
         },
         success: (res) => {
-          console.log(res.data)
+          // console.log(res.data)
           this.setData({
             records: res.data.data,
           })

@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/home/home",
     "pages/learn/learn",
     "pages/forum/forum",
@@ -11,7 +10,6 @@
     "pages/learn_post/learn_post",
     "pages/offer_new/offer_new",
     "pages/record_add/record_add"
-    
   ],
   "tabBar": {
     "color": "#7A7E83",

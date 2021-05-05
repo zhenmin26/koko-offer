@@ -4,6 +4,7 @@ function deleteOffer(record) {
       url: 'https://api.luzhenmin.com/deleteJobOffer',
       data: {
         userid: (wx.getStorageSync('id') || 'err'),
+        link_offer: record[0].link_offer,
         job_company: record[0].job_company,
         job_position: record[0].job_position
       },
@@ -23,6 +24,7 @@ function deleteOffer(record) {
       url: 'https://api.luzhenmin.com/deleteInternshipOffer',
       data: {
         userid: (wx.getStorageSync('id') || 'err'),
+        link_offer: record[0].link_offer,
         internship_company: record[0].internship_company,
         internship_position: record[0].internship_position,
         internship_type: record[0].internship_type
@@ -43,6 +45,7 @@ function deleteOffer(record) {
       url: 'https://api.luzhenmin.com/deleteStudyOffer',
       data: {
         userid: (wx.getStorageSync('id') || 'err'), 
+        link_offer: record[0].link_offer,
         study_major: record[0].study_major,
         study_school: record[0].study_school,
         study_type: record[0].study_type

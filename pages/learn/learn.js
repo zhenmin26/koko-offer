@@ -10,8 +10,9 @@ Page({
         content: "click to learn",
       },
     ],
-    articles: [
-    ],
+    articles: null,
+    show: true,
+    animated: true
   },
 
   /**
