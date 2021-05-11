@@ -30,3 +30,4 @@ repository for koko offer
 1. home页面请求数据时的loading页面
 2. offer查询，信息不串
 3. 初步完成了动态获得picker数据的问题（参考链接：https://www.cnblogs.com/inzaghihao/p/7844844.html）
+4. 将offer record页面展示记录的样式改为时间线
