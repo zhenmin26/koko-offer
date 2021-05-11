@@ -32,7 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(this.data.offer)
+    // console.log(this.data.offer)
     if(this.data.offer.offer_type == "job"){
       wx.request({
         url: 'https://api.luzhenmin.com/getOfferDetail',
@@ -135,6 +135,7 @@ Page({
   },
 
   addRecord: function (event) {
+    // console.log(event.currentTarget.dataset.records)
     let record = JSON.stringify(event.currentTarget.dataset.records)
     wx.navigateTo({
       url: '/pages/record_add/record_add?record=' + record,
@@ -146,8 +147,10 @@ Page({
     let record = event.currentTarget.dataset.records
     // console.log(record[0])
     wx.showModal({
-      title: '提示',
-      content: '确认删除？',
+      title: 'Warning',
+      content: 'Delete?',
+      cancelText: 'Cancel',
+      confirmText: 'Yes',
       success (res) {
         if (res.confirm) {
           util.deleteOffer(record)

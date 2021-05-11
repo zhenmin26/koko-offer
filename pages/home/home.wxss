@@ -3,8 +3,11 @@
 .tip{
   box-sizing: border-box;
   padding-left: 30rpx;
-  padding-top: 10rpx;
+  padding-top: 20rpx;
   color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .add_area{

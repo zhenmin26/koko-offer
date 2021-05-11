@@ -6,7 +6,6 @@
 
 <!-- offer title info -->
 <view class="offerinfo_outerBox">
-  <view></view>
   <view wx:if="{{offer.offer_type == 'job'}}" class="offerInfo">
     <view class="offerInfo_text">{{offer.job_company}}</view>
     <view class="offerInfo_text">{{offer.job_position}}</view>
@@ -21,47 +20,50 @@
     <view class="offerInfo_text">{{offer.study_type}}</view>
     <view class="offerInfo_text">{{offer.study_major}}</view>
   </view>
+  <view class="img">
+    <image class="img" src="/images/offer_more/record.png"></image>
+  </view>
+</view>
+
+
+
+<!-- all status records -->
+<view class="record_outerbox">
+  <view class="record_box">
+    <view class="weui-cell-circle"></view>
+    <block wx:for="{{records}}" wx:key="index">
+      <view  class="weui-cell-line" wx:if="{{item.offer_type == 'job'}}">
+        <view>
+          <view class="record_status">{{item.status}}</view>
+          <view class="record_time">{{item.time}}</view>
+        </view>
+      </view>
+      <view class="weui-cell-line" wx:if="{{item.offer_type == 'internship'}}">
+        <view>
+          <view class="record_status">{{item.status}}</view>
+          <view class="record_time">{{item.time}}</view>
+        </view>
+      </view>
+      <view class="weui-cell-line" wx:if="{{item.offer_type == 'further study'}}">
+        <view>
+          <view class="record_status">{{item.status}}</view>
+          <view class="record_time">{{item.time}}</view>
+        </view>
+      </view>
+      <view class="weui-cell-circle"></view>
+    </block>
+  </view>
 </view>
 
 <!-- button area -->
 <view class="button_area">
   <view class="botton_outerBox">
-    <button bindtap="addRecord" data-records="{{records}}" class="button_add" style="width:320rpx;">增加一条记录</button>
+    <button bindtap="addRecord" data-records="{{records}}" class="button_add" style="width:320rpx;">Add a record</button>
   </view>
   <view class="botton_outerBox">
-    <button bindtap="deleteOffer" data-records="{{records}}" class="button_delete" style="width:320rpx;">删除该offer记录</button>
+    <button bindtap="deleteOffer" data-records="{{records}}" class="button_delete" style="width:320rpx;">Delete offer</button>
   </view>
 </view>
-
-<!-- all status records -->
-<view class="record_outerbox">
-  <view class="img">
-    <image class="img" src="/images/offer_more/record.png"></image>
-  </view>
-  <view class="record_box">
-    <block wx:for="{{records}}" wx:key="index">
-      <view wx:if="{{item.offer_type == 'job'}}">
-        <view class="for_box">
-          <view class="record_status">{{item.status}}</view>
-          <view class="record_time">{{item.create_time}}</view>
-        </view>
-      </view>
-      <view wx:if="{{item.offer_type == 'internship'}}">
-        <view class="for_box">
-          <view class="record_status">{{item.status}}</view>
-          <view class="record_time">{{item.create_time}}</view>
-        </view>
-      </view>
-      <view wx:if="{{item.offer_type == 'further study'}}">
-        <view class="for_box">
-          <view class="record_status">{{item.status}}</view>
-          <view class="record_time">{{item.create_time}}</view>
-        </view>
-      </view>
-    </block>
-  </view>
-</view>
-
 <!-- <view class="record_outerbox">
   <view class="img"></view>
 </view> -->

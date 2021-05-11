@@ -1,5 +1,4 @@
 <!--pages/home/home.wxml-->
-
 <!-- header bar -->
 <view>
   <header headerIcon="home" headerText="Your Offer Record"></header>
@@ -29,7 +28,8 @@
       </view>
     </block>
     <block wx:if="{{no_record}}">
-      <view class="tip">点击上方按钮添加自己的记录吧~~~</view>
+      <view class="tip">No offer records</view>
+      <view class="tip">Click new record button to add one!</view>
     </block>
     <block wx:for="{{records}}" wx:key="index">
       <!-- icon -->

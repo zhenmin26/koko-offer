@@ -7,10 +7,10 @@
 
 <view class="outer_section">
   <view class="section">
-    <view class="section__title">请选择Offer类型</view>
+    <view class="section__title">Please choose offer type</view>
     <picker bindchange="pickerOfOfferType" value="{{indexOfOfferType}}" range="{{offerType}}">
       <view class="picker">
-        <text class="picker_text">当前选择：</text>{{offerType[indexOfOfferType]}}
+        <text class="picker_text">Your choice：</text>{{offerType[indexOfOfferType]}}
       </view>
     </picker>
   </view>
@@ -21,10 +21,10 @@
   <block wx:if="{{indexOfOfferType == 1}}">
     <view class="outer_section">
       <view class="section">
-        <view class="section__title">工作岗位</view>
+        <view class="section__title">Job position</view>
         <picker mode="multiSelector" bindchange="bindMultiPickerChangeOfJob" bindcolumnchange="bindMultiPickerColumnChangeOfJob" value="{{multiIndexOfJob}}" range="{{multiArrayOfJob}}">
           <view class="picker">
-            当前选择：
+            Your choice：
             <text>{{multiArrayOfJob[0][multiIndexOfJob[0]]}} {{multiArrayOfJob[1][multiIndexOfJob[1]]}}</text>
           </view>
         </picker>
@@ -35,10 +35,20 @@
   <block wx:elif="{{indexOfOfferType == 2}}">
     <view class="outer_section">
       <view class="section">
-        <view class="section__title">实习类型</view>
+        <view class="section__title">Internship position</view>
         <picker mode="multiSelector" bindchange="bindMultiPickerChangeOfInternship" bindcolumnchange="bindMultiPickerColumnChangeOfInternship" value="{{multiIndexOfInternship}}" range="{{multiArrayOfInternship}}">
           <view class="picker">
-            <view>Your choice: {{multiArrayOfInternship[0][multiIndexOfInternship[0]]}} {{multiArrayOfInternship[1][multiIndexOfInternship[1]]}} {{multiArrayOfInternship[2][multiIndexOfInternship[2]]}}</view>
+            <view>Your choice: {{multiArrayOfInternship[0][multiIndexOfInternship[0]]}} {{multiArrayOfInternship[1][multiIndexOfInternship[1]]}}</view>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="outer_section">
+      <view class="section">
+        <view class="section__title">Internship type</view>
+        <picker bindchange="bindPickerChangeOfInternshipType" value="{{indexOfInternshipType}}" range="{{arrayOfInternshipType}}">
+          <view class="picker">
+            Your choice：{{arrayOfInternshipType[indexOfInternshipType]}}
           </view>
         </picker>
       </view>
@@ -48,20 +58,20 @@
   <block wx:elif="{{indexOfOfferType == 3}}">
     <view class="outer_section">
       <view class="section">
-        <view class="section__title">学校</view>
-        <picker bindchange="pickerOfSchool" value="{{indexOfSchool}}" range="{{school}}">
+        <view class="section__title">Program type</view>
+        <picker bindchange="pickerOfStudyType" value="{{indexOfStudyType}}" range="{{studyType}}">
           <view class="picker">
-            当前选择：{{school[indexOfSchool]}}
+            Your choice：{{studyType[indexOfStudyType]}}
           </view>
         </picker>
       </view>
     </view>
     <view class="outer_section">
       <view class="section">
-        <view class="section__title">学习项目</view>
+        <view class="section__title">Program</view>
         <picker mode="multiSelector" bindchange="bindMultiPickerChangeOfStudy" bindcolumnchange="bindMultiPickerColumnChangeOfStudy" value="{{multiIndexOfStudy}}" range="{{multiArrayOfStudy}}">
           <view class="picker">
-            当前选择：
+            Your choice：
             <text>{{multiArrayOfStudy[0][multiIndexOfStudy[0]]}} {{multiArrayOfStudy[1][multiIndexOfStudy[1]]}}</text>
           </view>
         </picker>
@@ -70,7 +80,7 @@
   </block>
 
   <block wx:else>
-    <view class="tip_text">必须要先选offer类型噢~~~</view>
+    <view class="tip_text">Choose offer type first</view>
   </block>
 </block>
 <!-- status -->

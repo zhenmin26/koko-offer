@@ -41,5 +41,5 @@
     </picker>
   </view>
 </view>
-<button bindtap="addRecord" class="button">添加记录</button>
+<button bindtap="addRecord" class="button">Add</button>
 

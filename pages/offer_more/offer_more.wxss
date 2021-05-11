@@ -4,9 +4,11 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  /* margin-top: 15rpx; */
   padding-left: 30rpx;
   padding-right: 30rpx;
+  position: fixed;
+  height: 11%;
+  bottom: 0;
 }
 
 .botton_outerBox{
@@ -30,6 +32,7 @@
 }
 
 .offerinfo_outerBox{
+  display: flex;
   box-sizing: content-box;
   padding: 20rpx 20rpx 0rpx 20rpx;
 }
@@ -37,7 +40,8 @@
 .offerInfo{
   color: gray;
   display: flex;
-  justify-content: center;
+  margin-left: 50rpx;
+  width: 70%;
 }
 
 .offerInfo_text{
@@ -48,43 +52,54 @@
   font-weight: 600;
 }
 
-.record_outerbox{
-  height: 120rpx;
-  display: flex;
-  padding-top: 20rpx;
-  padding-left: 60rpx;
-  justify-content: flex-start;
-}
-
 .img{
-  margin-top: 2.5px;
+  display: flex;
+  text-align: right;
+  margin-top: -3.5px;
   height: 80rpx;
   width: 80rpx;
 }
 
-.record_box{
-  width: 500rpx;
-  height: 100rpx;
-  box-sizing: border-box;
-  padding: 5px;
+.record_outerbox{
+  padding-top: 10rpx;
+  width: 750rpx;
+  height: 71.7%;
+  position: fixed;
+  overflow: scroll;
 }
 
-.for_box{
-  width: 500rpx;
-  padding: 5px 5px 5px 8px;
-  border: lightgray solid 4px;
-  border-radius: 8px;
+.record_box{
+  /* width: 500rpx;
+  height: 100rpx;
   box-sizing: border-box;
-  margin-top: 30rpx;
+  padding: 5px; */
+  height: 100rpx;
+  margin: 0px 50px 0px 50px;
+}
+
+.weui-cell-line{
+  margin-left: 5px;
+  border-left: 2px solid #ddd;
+  /* height: 100px;  */
+  background: #fff
+}
+.weui-cell-circle{
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 10px;
+  height: 10px;
+  border-color: #ADD975;
 }
 
 .record_status{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
+  margin-left: 20rpx;
 }
 
 .record_time{
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 5px;
   font-size: 16px;
+  margin-top: 5px;
+  margin-left: 20rpx;
 }

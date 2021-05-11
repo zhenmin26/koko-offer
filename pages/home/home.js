@@ -9,8 +9,6 @@ Page({
     no_record: false,
     records: null,
     tips: 'Loading',
-    // show: true,
-    // animated: true
   },
 
   /**
@@ -31,37 +29,62 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // console.log("get offer")
     var that = this;
-    app.getOpenid().then(function(res){
-        if(res.status == 200){
-          wx.request({
-            url: 'https://api.luzhenmin.com/getOffer',
-            data: {
-              userid: wx.getStorageSync('id') || 'err'
-            },
-            header: {
-              'content-type': 'application/json' //默认值
-            },
-            success: (res) => {
-              // console.log(res.data.data)
-              if((res.data.data).length==0){
-                that.setData({
-                  no_record: true
-                })
-              }else{
-                that.setData({
-                  no_record: false,
-                  records: res.data.data
-                })
+    if(wx.getStorageSync('id') != null){
+      wx.request({
+        url: 'https://api.luzhenmin.com/getOffer',
+        data: {
+          userid: wx.getStorageSync('id') || 'err'
+        },
+        header: {
+          'content-type': 'application/json' //默认值
+        },
+        success: (res) => {
+          if((res.data.data).length==0){
+            that.setData({
+              no_record: true,
+              records: res.data.data
+            })
+          }else{
+            that.setData({
+              no_record: false,
+              records: res.data.data
+            })
+          }
+        }
+      })
+    }
+    else{
+      app.getOpenid().then(function(res){
+          if(res.status == 200){
+            wx.request({
+              url: 'https://api.luzhenmin.com/getOffer',
+              data: {
+                userid: wx.getStorageSync('id') || 'err'
+              },
+              header: {
+                'content-type': 'application/json' //默认值
+              },
+              success: (res) => {
+                if((res.data.data).length==0){
+                  that.setData({
+                    no_record: true,
+                    records: res.data.data
+                  })
+                }else{
+                  that.setData({
+                    no_record: false,
+                    records: res.data.data
+                  })
+                }
               }
-            }
-          })
-        }
-        else{
-          console.log(res.data)
-        }
-    })
+            })
+          }
+          else{
+            console.log(res.data)
+          }
+      })
+    }
   },
 
   /**

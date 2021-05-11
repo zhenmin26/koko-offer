@@ -30,6 +30,7 @@
   margin: 5rpx;
   box-sizing: border-box;
 }
+
 .picker{
   /* background-color: yellow; */
   margin: 5rpx;
