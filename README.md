@@ -25,9 +25,18 @@ repository for koko offer
 * 待解决的程序bug：offer的查询不准确，如果offer三个基本信息重合，会造成查询错误
 * 滑动选择部分怎么从数据库获得？
 
-2021.5.5-5.12
+2021.5.5-5.11
 * 更新的内容：
 1. home页面请求数据时的loading页面
 2. offer查询，信息不串
 3. 初步完成了动态获得picker数据的问题（参考链接：https://www.cnblogs.com/inzaghihao/p/7844844.html）
 4. 将offer record页面展示记录的样式改为时间线
+
+2021.5.12-5.18
+* 更新的内容：
+1. 搜索的实现方式
+
+2021.5.19-5.25
+* 更新的内容：
+1. 解决图片显示问题
+2. offer_more页面左滑删除record
