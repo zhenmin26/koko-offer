@@ -5,8 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
+    yes: [{
+      id: 1,
+      value: '是'
+    }, {
+      id: 2,
+      value: '否'
+    }],
+    yesresult: [],
     //offer type
-    offerType: ['', 'job', 'internship', 'further study'],
+    offerType: ['', '工作', '实习', '深造'],
     offerTypeArray: [
       {
         id: 0,
@@ -14,15 +22,15 @@ Page({
       },
       {
         id: 1,
-        name: 'job'
+        name: '工作'
       },
       {
         id: 2,
-        name: 'internship'
+        name: '实习'
       },
       {
         id: 3,
-        name: 'further study'
+        name: '深造'
       }
     ],
     indexOfOfferType: 0,
@@ -32,7 +40,7 @@ Page({
     multiIndexOfJob: [],
 
     //multiSelector of internship
-    arrayOfInternshipType: ['', 'summer', 'winter', 'daily'],
+    arrayOfInternshipType: ['', '暑期', '寒假', '日常'],
     objectArrayOfInternshipType: [
       {
         id: 0,
@@ -40,15 +48,15 @@ Page({
       },
       {
         id: 1,
-        name: 'summer'
+        name: '暑期'
       },
       {
         id: 2,
-        name: 'winter'
+        name: '寒假'
       },
       {
         id: 3,
-        name: 'daily'
+        name: '日常'
       }
     ],
     indexOfInternshipType: 0,
@@ -59,7 +67,7 @@ Page({
     multiArrayOfStudy: [],
     multiIndexOfStudy: [],
     //type
-    studyType: ['', 'Master', 'PHD'],
+    studyType: ['', '硕士', '博士'],
     studyTypeArray: [
       {
         id: 0,
@@ -67,17 +75,17 @@ Page({
       },
       {
         id: 1,
-        name: 'Master'
+        name: '硕士'
       },
       {
         id: 2,
-        name: 'PHD'
+        name: '博士'
       }
     ],
     indexOfStudyType: 0,
 
     //selector of status
-    status: ['', 'application submitted', 'interview invitation', 'interview finished', 'get rejected', 'offer!'],
+    status: ['', '已提交申请', '收到面试邀请', '完成面试', '被拒', '收到offer！'],
     objectArray: [
       {
         id: 0,
@@ -85,23 +93,23 @@ Page({
       },
       {
         id: 1,
-        name: 'application submitted'
+        name: '已提交申请'
       },
       {
         id: 2,
-        name: 'interview invitation'
+        name: '收到面试邀请'
       },
       {
         id: 3,
-        name: 'interview finished'
+        name: '完成面试'
       },
       {
         id: 4,
-        name: 'get rejected'
+        name: '被拒'
       },
       {
         id: 5,
-        name: 'offer!'
+        name: '收到offer！'
       }
     ],
     indexOfStatus: 0,
@@ -122,7 +130,7 @@ Page({
       success: (res)=> {
         var company_list = res.data.data;
         var companyArr = company_list.map(item => { // 此方法将company名称区分到一个新数组中
-          return item.company_name;
+          return item.company_name_ch;
         });
         that.setData({
           multiArrayOfJob: [companyArr, []],　　　　
@@ -146,7 +154,7 @@ Page({
       success: (res)=> {
         var internshipCompany_list = res.data.data;
         var internshipCompanyArr = internshipCompany_list.map(item => { // 此方法将company名称区分到一个新数组中
-          return item.internshipCompany_name;
+          return item.internshipCompany_name_ch;
         });
         that.setData({
           multiArrayOfInternship: [internshipCompanyArr, []],　　　　
@@ -170,7 +178,7 @@ Page({
       success: (res)=> {
         var school_list = res.data.data;
         var schoolArr = school_list.map(item => { // 此方法将company名称区分到一个新数组中
-          return item.school_name;
+          return item.school_name_ch;
         });
         that.setData({
           multiArrayOfStudy: [schoolArr, []],　　　　
@@ -310,9 +318,9 @@ Page({
           // console.log(res.data.data);
           var master_list = res.data.data;
           var masterArr = master_list.map(item => {
-            return item.master_name;
+            return item.master_name_ch;
           })
-          masterArr.unshift('All projects');
+          masterArr.unshift('所有项目');
           var schoolArr = this.data.schoolArr;
           that.setData({
             multiArrayOfStudy: [schoolArr, masterArr],
@@ -385,9 +393,9 @@ Page({
         success: (res) => {
           var job_list = res.data.data;
           var jobArr = job_list.map(item => {
-            return item.job_name;
+            return item.job_name_ch;
           })
-          jobArr.unshift('All positions');
+          jobArr.unshift('所有岗位');
           var companyArr = this.data.companyArr;
           that.setData({
             multiArrayOfJob: [companyArr, jobArr],
@@ -472,9 +480,9 @@ Page({
           // console.log(res.data.data)
           var internship_list = res.data.data;
           var internshipArr = internship_list.map(item => {
-            return item.internship_name;
+            return item.internship_name_ch;
           })
-          internshipArr.unshift('All internships');
+          internshipArr.unshift('所有实习岗位');
           // console.log(internshipArr)
           var internshipCompanyArr = this.data.internshipCompanyArr;
           // console.log(internshipCompanyArr)
@@ -508,17 +516,25 @@ Page({
 
   //添加offer到数据库
   addOffer: function(event){
-    // console.log(this.data)
-    if(this.data.offerType[this.data.indexOfOfferType] == "job"){
+    let yesresult;
+    if(this.data.yes[0].checked == false){
+      yesresult = 0;
+    }
+    else{
+      yesresult = 1;
+    }
+    // console.log(yesresult)
+    if(this.data.indexOfOfferType == 1){
       wx.request({
         url: 'https://api.luzhenmin.com/addJobOffer',
         data: {
           userid: (wx.getStorageSync('id') || 'err'),
-          offer_type: this.data.offerType[this.data.indexOfOfferType],
+          offer_type: this.data.indexOfOfferType,
           job_company: this.data.multiArrayOfJob[0][this.data.multiIndexOfJob[0]],
           job_position: this.data.multiArrayOfJob[1][this.data.multiIndexOfJob[1]],
-          status: this.data.status[this.data.indexOfStatus],
-          create_time: this.data.create_time
+          status: this.data.indexOfStatus,
+          create_time: this.data.create_time,
+          yesresult: yesresult
         },
         header: {
           'content-type': 'application/json' //默认值
@@ -539,20 +555,22 @@ Page({
               )
             }
           })        
+        
         }
       })
     }
-    if(this.data.offerType[this.data.indexOfOfferType] == "internship"){
+    if(this.data.indexOfOfferType == 2){
       wx.request({
         url: 'https://api.luzhenmin.com/addInternshipOffer',
         data: {
           userid: (wx.getStorageSync('id') || 'err'),
-          offer_type: this.data.offerType[this.data.indexOfOfferType],
+          offer_type: this.data.indexOfOfferType,
           internship_company: this.data.multiArrayOfInternship[0][this.data.multiIndexOfInternship[0]],
           internship_position: this.data.multiArrayOfInternship[1][this.data.multiIndexOfInternship[1]],
           internship_type: this.data.arrayOfInternshipType[this.data.indexOfInternshipType],
-          status: this.data.status[this.data.indexOfStatus],
-          create_time: this.data.create_time
+          status: this.data.indexOfStatus,
+          create_time: this.data.create_time,
+          yesresult: yesresult
         },
         header: {
           'content-type': 'application/json' //默认值
@@ -576,17 +594,18 @@ Page({
         }
       })
     }
-    if(this.data.offerType[this.data.indexOfOfferType] == "further study"){
+    if(this.data.indexOfOfferType == 3){
       wx.request({
         url: 'https://api.luzhenmin.com/addStudyOffer',
         data: {
           userid: (wx.getStorageSync('id') || 'err'),
-          offer_type: this.data.offerType[this.data.indexOfOfferType],
+          offer_type: this.data.indexOfOfferType,
           study_type: this.data.studyType[this.data.indexOfStudyType],
           study_school: this.data.multiArrayOfStudy[0][this.data.multiIndexOfStudy[0]],
           study_major:this.data.multiArrayOfStudy[1][this.data.multiIndexOfStudy[1]],
-          status: this.data.status[this.data.indexOfStatus],
-          create_time: this.data.create_time
+          status: this.data.indexOfStatus,
+          create_time: this.data.create_time,
+          yesresult: yesresult
         },
         header: {
           'content-type': 'application/json' //默认值
@@ -610,6 +629,35 @@ Page({
         }
       })
     }
-    
   },
+
+  radioChange: function (e) {
+    // console.log('radio发生change事件，携带value值为：', e.detail.value)
+    const yes = this.data.yes
+    for (let i = 0, len = yes.length; i < len; ++i) {
+      yes[i].checked = yes[i].id == e.detail.value
+    }
+    this.setData({
+      yes
+    })
+    console.log(this.data.yes);
+  },
+
+  // postaddManage: function () {
+  //   let yes = '';
+  //     this.data.yes.map((item, index) => {
+  //       if (item.checked) {
+  //         yes = item.id;
+  //       }
+  //     })
+  //   let params = {
+  //     yes: yes,
+  //   }
+  //   addManage(params).then(res => {
+  //     console.log(res);
+  //     // this.setData({
+  //     //   yesresult: res
+  //     // })
+  //   })
+  // }
 })

@@ -1,0 +1,61 @@
+<!--pages/search/resultDetail/resultDetail.wxml-->
+<!--pages/record_more/record_more.wxml-->
+<!-- header bar -->
+<view>
+  <header headerIcon="home" headerText="详情"></header>
+</view>
+
+<!-- offer title info -->
+<view class="offerinfo_outerBox">
+  <view wx:if="{{offer.offer_type == 1}}" class="offerInfo">
+    <view class="offerInfo_text">{{offer.job_company}}</view>
+    <view class="offerInfo_text">{{offer.job_position}}</view>
+  </view>
+  <view wx:if="{{offer.offer_type == 2}}" class="offerInfo">
+    <view class="offerInfo_text">{{offer.internship_company}}</view>
+    <view class="offerInfo_text">{{offer.internship_position}}</view>
+    <view class="offerInfo_text">{{offer.internship_type}}</view>
+  </view>
+  <view wx:if="{{offer.offer_type == 3}}" class="offerInfo">
+    <view class="offerInfo_text">{{offer.study_school}}</view>
+    <view class="offerInfo_text">{{offer.study_type}}</view>
+    <view class="offerInfo_text">{{offer.study_major}}</view>
+  </view>
+  <!-- <view class="img">
+    <image class="img" src="/images/offer_more/record.png"></image>
+  </view> -->
+</view>
+
+<!-- all status records -->
+<view class="record_outerbox">
+  <view class="record_box">
+    <view class="weui-cell-circle"></view>
+      <block wx:for="{{records}}" wx:key="index">
+      <view class="weui-cell-line" wx:if="{{item.offer_type == 1}}">
+        <view>
+          <slide-delete bindaction="deleteRecord" data-record_id="{{item.id}}" data-index="{{index}}">
+            <view class="record_status">{{item.status_name}}</view>
+            <view class="record_time">{{item.time}}</view>
+          </slide-delete>
+        </view>
+      </view>
+      <view class="weui-cell-line" wx:if="{{item.offer_type == 2}}">
+        <view>
+          <slide-delete bindaction="deleteRecord" data-record_id="{{item.id}}" data-index="{{index}}">
+            <view class="record_status">{{item.status_name}}</view>
+            <view class="record_time">{{item.time}}</view>
+          </slide-delete>
+        </view>
+      </view>
+      <view class="weui-cell-line" wx:if="{{item.offer_type == 3}}">
+        <view>
+          <slide-delete bindaction="deleteRecord" data-record_id="{{item.id}}" data-index="{{index}}">
+            <view class="record_status">{{item.status_name}}</view>
+            <view class="record_time">{{item.time}}</view>
+          </slide-delete>
+        </view>
+      </view>
+      <view class="weui-cell-circle"></view>
+    </block>
+  </view>
+</view>

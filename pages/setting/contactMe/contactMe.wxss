@@ -1,0 +1,21 @@
+/* pages/setting/contantMe/contactMe.wxss */
+.content {
+  box-sizing: border-box;
+  width: 84%;
+  /* position: absolute;
+  left: 8%; */
+  padding: 50rpx 20rpx 8rpx 50rpx;
+  color: rgb(81,81,81);
+}
+
+.outerbox{
+  display: block;
+  align-items: center;
+}
+
+.text{
+  padding: 8rpx 30rpx 8rpx 50rpx;
+  font-family: Arial, Helvetica, sans-serif;
+  size: 40px;
+  color: #85C1E9;
+}

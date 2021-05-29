@@ -1,7 +1,7 @@
 <!--pages/record_add/record_add.wxml-->
 <!-- header bar -->
 <view>
-  <header headerIcon="home" headerText="Add record"></header>
+  <header headerIcon="home" headerText="添加进展"></header>
 </view>
 <view style="padding: 10rpx;"></view>
 <!-- <view class="top">Current offer:</view> -->
@@ -23,23 +23,23 @@
 </view>
 <view class="outer_section">
   <view class="section">
-    <view class="section__title">Status</view>
+    <view class="section__title">新进展</view>
     <picker bindchange="bindPickerChangeOfStatus" value="{{indexOfStatus}}" range="{{status}}">
       <view class="picker">
-        Your choice：{{status[indexOfStatus]}}
+        当前选择：{{status[indexOfStatus]}}
       </view>
     </picker>
   </view>
 </view>
 <view class="outer_section">
   <view class="section">
-    <view class="section__title">Update time</view>
+    <view class="section__title">更新时间</view>
     <picker mode="date" value="{{date}}" start="2015-09-01" end="2099-09-01" bindchange="bindDateChange">
       <view class="picker">
-        Your choice: {{create_time}}
+        当前选择: {{create_time}}
       </view>
     </picker>
   </view>
 </view>
-<button bindtap="addRecord" class="button">Add</button>
+<button bindtap="addRecord" class="button">提交</button>
 

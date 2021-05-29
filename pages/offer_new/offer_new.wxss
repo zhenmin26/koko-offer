@@ -12,10 +12,12 @@
 .section{
   height: 150rpx;
   width: 700rpx;
-  border-style: solid;
-  border-color: wheat;
-  border-radius: 0.3cm;
-  border-width: 6rpx;
+  /* border-bottom: 2px solid rgb(228, 216, 216); */
+  border-bottom: 2px solid rgb(245,245,245);
+  /* border-style: solid;
+  border-color: wheat; */
+  border-radius: 0.2cm;
+  /* border-width: 6rpx; */
   padding: 10rpx;
   box-sizing: border-box;
 }
@@ -23,9 +25,10 @@
 .section__title{
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: 500;
-  color: grey;
+  color: #F1C40F;
+  /* color: rgb(81,81,81); */
   /* background-color: yellowgreen; */
   margin: 5rpx;
   box-sizing: border-box;
@@ -38,6 +41,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 350;
+  color: gray;
 }
 
 .picker_text{
@@ -58,9 +62,37 @@
 
 .button{
   /* background-color: #62b900; */
-  background-color: rgb(115, 201, 139);
+  background-color: rgb(133, 173, 87);
   color: white;
   margin: 30rpx;
   border-radius: 8px;
   /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}
+
+.radio{
+  width: 15rpx;
+  height: 15rpx;
+  color: gray;
+}
+
+.inpbox {
+  width: 100%;
+  /* margin-left: 20rpx; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.radiogroup {
+  display: flex;
+  flex-direction: row;
+}
+.radiobox {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25rpx;
+}
+
+.radiotxt{
+  color: gray;
 }

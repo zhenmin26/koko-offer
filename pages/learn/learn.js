@@ -7,7 +7,7 @@ Page({
   data: {
     tops: [
       {
-        content: "click to learn",
+        content: "点击阅读",
       },
     ],
     articles: null,

@@ -1,47 +1,48 @@
 <!--pages/setting/setting.wxml-->
 <!-- header bar -->
-<view>
-  <header headerIcon="setting" headerText="Setting"></header>
+<!-- <view>
+  <header headerIcon="my" headerText="我"></header>
+</view> -->
+<view class="userinfo">
+  <view class="imgbox">
+    <view class="userimg"><open-data type="userAvatarUrl"></open-data></view>
+  </view>
+  <view class="username"><open-data type="userNickName"></open-data></view>
 </view>
 
+
+
 <!-- setting area -->
-<view class="setting_box">
+<!-- <view class="setting_box" bindtap="goToDeletes">
   <view class="setting_icon">
-    <image class="setting_icon_pic" style="width: 46rpx; height: 46rpx;" src="/images/setting/favorites.png"></image>
+    <image class="setting_icon_pic" src="http://api.luzhenmin.com:8000/images/setting/deletes.png"></image>
   </view>
   <view class="setting_content">
-    <view class="setting_content_text">Favorites</view>
+    <view class="setting_content_text">已删除记录</view>
   </view>
-</view>
-<view class="setting_box">
+</view> -->
+<view class="setting_box" bindtap="goToContactMe">
   <view class="setting_icon">
-    <image class="setting_icon_pic" src="/images/setting/friend.png"></image>
+    <image class="setting_icon_pic" src="http://api.luzhenmin.com:8000/images/setting/contact_me.png"></image>
   </view>
   <view class="setting_content">
-    <view class="setting_content_text">Follow</view>
+    <view class="setting_content_text">联系我</view>
   </view>
 </view>
-<view class="setting_box">
+<!-- <view class="setting_box" bindtap="goToQnA">
   <view class="setting_icon">
-    <image class="setting_icon_pic" src="/images/setting/message.png"></image>
-  </view>
-  <view class="setting_content">
-    <view class="setting_content_text">Message</view>
-  </view>
-</view>
-<view class="setting_box">
-  <view class="setting_icon">
-    <image class="setting_icon_pic" src="/images/setting/about.png"></image>
-  </view>
-  <view class="setting_content">
-    <view class="setting_content_text">About</view>
-  </view>
-</view>
-<view class="setting_box">
-  <view class="setting_icon">
-    <image class="setting_icon_pic" src="/images/setting/question.png"></image>
+    <image class="setting_icon_pic" src="http://api.luzhenmin.com:8000/images/setting/question.png"></image>
   </view>
   <view class="setting_content">
     <view class="setting_content_text">Q&A</view>
   </view>
+</view> -->
+<view class="setting_box" bindtap="goToAbout">
+  <view class="setting_icon">
+    <image class="setting_icon_pic" src="http://api.luzhenmin.com:8000/images/setting/about.png"></image>
+  </view>
+  <view class="setting_content">
+    <view class="setting_content_text">关于</view>
+  </view>
 </view>
+

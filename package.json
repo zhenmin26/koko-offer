@@ -1,0 +1,22 @@
+{
+  "name": "koko-offer",
+  "version": "1.0.0",
+  "description": "repository for koko offer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhenmin26/koko-offer.git"
+  },
+  "author": "zhenmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhenmin26/koko-offer/issues"
+  },
+  "homepage": "https://github.com/zhenmin26/koko-offer#readme",
+  "dependencies": {
+    "wx-search-have-history": "0.0.2"
+  }
+}

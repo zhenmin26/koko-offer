@@ -1,0 +1,15 @@
+<!--pages/setting/about/about.wxml-->
+<view>
+  <header headerIcon="my" headerText="关于"></header>
+</view>
+<view class="outerbox">
+  <!-- <view class="content"> -->
+  <text class="text">
+    KoKo拟音鸽子叫“咕咕”，希望大家不要被自己心仪的offer鸽，拿到自己心仪的offer！\n
+    项目出发点是希望做出一个供申请阶段的大家记录自己申请过程的小程序，因为很多时候(包括我自己申请的时候)，看到大家是使用备忘录、EXCEL等工具来进行记录的，没有一个趁手的小工具。\n
+    如果大家有什么建议或意见，欢迎联系我！
+  </text>
+  <view bindtap="contactme" class="contactme">点击获取联系方式</view>
+  <!-- </view> -->
+</view>
+

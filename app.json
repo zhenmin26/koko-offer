@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/home/home",
     "pages/learn/learn",
     "pages/forum/forum",
@@ -10,11 +9,19 @@
     "pages/forum_post/forum_post",
     "pages/learn_post/learn_post",
     "pages/offer_new/offer_new",
-    "pages/record_add/record_add"
+    "pages/record_add/record_add",
+    "pages/setting/deletes/deletes",
+    "pages/setting/about/about",
+    "pages/setting/contactMe/contactMe",
+    "pages/setting/QnA/QnA",
+    "pages/search/search",
+    "component/slide-delete/slide-delete",
+    "component/slider/slider",
+    "pages/search/resultDetail/resultDetail"
   ],
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#7AAF49",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
@@ -22,19 +29,25 @@
         "iconPath": "/images/tabbar/home_unclick.png",
         "selectedIconPath": "/images/tabbar/home_click.png",
         "pagePath": "pages/home/home",
-        "text": "Home"
+        "text": "主页"
       },
       {
-        "iconPath": "/images/tabbar/learn_unclick.png",
-        "selectedIconPath": "/images/tabbar/learn_click.png",
+        "iconPath": "/images/tabbar/search_unclick.png",
+        "selectedIconPath": "/images/tabbar/search_click.png",
+        "pagePath": "pages/search/search",
+        "text": "发现"
+      },
+      {
+        "iconPath": "/images/tabbar/rest_unclick.png",
+        "selectedIconPath": "/images/tabbar/rest_click.png",
         "pagePath": "pages/learn/learn",
-        "text": "Learn"
+        "text": "休闲"
       },
       {
-        "iconPath": "/images/tabbar/setting_unclick.png",
-        "selectedIconPath": "/images/tabbar/setting_click.png",
+        "iconPath": "/images/tabbar/my_unclick.png",
+        "selectedIconPath": "/images/tabbar/my_click.png",
         "pagePath": "pages/setting/setting",
-        "text": "Setting"
+        "text": "我"
       }
     ]
   },

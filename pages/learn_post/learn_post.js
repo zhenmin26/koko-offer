@@ -1,4 +1,6 @@
 // pages/learn_post/learn_post.js
+const wxParse = require("../../Util/wxParse/wxParse.js");
+
 Page({
 
   /**
@@ -6,14 +8,17 @@ Page({
    */
   data: {
     title: '',
-    post_content:'',
+    post_content:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.title)
+    // console.log(options.title)
+    this.setData({
+      title: options.title
+    })
     wx.request({
       url: 'https://api.luzhenmin.com/getLearnPostDetail',
       data: {
@@ -23,8 +28,12 @@ Page({
         'content-type': 'application/json' //默认值
       },
       success: (res) => {
+        let post_content = res.data.data[0]
+        // console.log(res.data.data[0])
+        wxParse.wxParse('content', 'html', post_content.content,this, 5);
         this.setData({
-          post_content: res.data.data[0]
+          post_content: res.data.data
+          // post_content: res.data.data[0]
         })
       }
     })

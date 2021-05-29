@@ -1,0 +1,14 @@
+<!--pages/setting/deletes/deletes.wxml-->
+<view class="content_area">
+  <block wx:if="{{records == null}}">
+    <view class="page">
+        <view class="page__bd">
+            <mp-loading type="circle" tips="{{tips}}"></mp-loading>
+        </view>
+    </view>
+  </block>
+  <block wx:if="{{no_record}}">
+    <view class="tip">No offer records</view>
+    <view class="tip">Click new record button to add one!</view>
+  </block>
+</view>

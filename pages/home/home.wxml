@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
 <!-- header bar -->
 <view>
-  <header headerIcon="home" headerText="Your Offer Record"></header>
+  <header headerIcon="home" headerText="申请记录"></header>
 </view>
 
 <!-- add new content -->
@@ -12,7 +12,7 @@
     </view>
   </navigator>
   <view class="add_description">
-    new record
+    新增
   </view>
 </view>
 
@@ -28,65 +28,66 @@
       </view>
     </block>
     <block wx:if="{{no_record}}">
-      <view class="tip">No offer records</view>
-      <view class="tip">Click new record button to add one!</view>
+      <view class="tip">目前没有申请记录</view>
+      <view class="tip"><text>点击 <text class="new_record">新增</text> 按钮进行添加</text></view>
     </block>
     <block wx:for="{{records}}" wx:key="index">
       <!-- icon -->
       <view class="content_icon">
-        <view wx:if="{{item.offer_type == 'job'}}">
-            <image class="content_icon_pic" src="/images/home/{{item.job_company}}.png"></image>
+        <view wx:if="{{item.offer_type == 1}}">
+            <image class="content_icon_pic" src="http://api.luzhenmin.com:8000/images/home/{{item.company_name}}.png"></image>
         </view>
-        <view wx:if="{{item.offer_type == 'internship'}}">
-          <image class="content_icon_pic" src="/images/home/{{item.internship_company}}.png"></image>
-        </view>
-        <view wx:if="{{item.offer_type == 'further study'}}">
-          <image class="content_icon_pic" src="/images/home/{{item.study_school}}.png"></image>
+        <view wx:if="{{item.offer_type == 2}}">
+          <!-- after union, internshipCompany_name -> company_name -->
+          <image class="content_icon_pic" src="http://api.luzhenmin.com:8000/images/home/{{item.company_name}}.png"></image>
+        </view> 
+        <view wx:if="{{item.offer_type == 3}}">
+          <image class="content_icon_pic" src="http://api.luzhenmin.com:8000/images/home/{{item.company_name}}.png"></image>
         </view>
       </view>
       <!-- body -->
       <view class="content_body">
         <view class="content_title">
-          <view class="content_title_name">Title</view>
+          <view class="content_title_name">标题</view>
           <view class="content_title_box">
             <view class="content_title_inbox">
-              <view wx:if="{{item.offer_type == 'job'}}">
+              <view wx:if="{{item.offer_type == 1}}" class="text">
                 {{item.job_company}}
                 {{item.job_position}}
               </view>
-              <view wx:if="{{item.offer_type == 'internship'}}">
+              <view wx:if="{{item.offer_type == 2}}"  class="text">
                 {{item.internship_company}}
                 {{item.internship_position}}
                 {{item.internship_type}}
               </view>
-              <view wx:if="{{item.offer_type == 'further study'}}">
-                {{item.study_type}}
+              <view wx:if="{{item.offer_type == 3}}"  class="text">
                 {{item.study_school}}
                 {{item.study_major}}
+                {{item.study_type}}
               </view>
             </view>
           </view>
         </view>
         <view class="content_status">
-          <view class="content_status_name">Status</view>
+          <view class="content_status_name">进展</view>
           <view class="content_status_box">
-            <view class="content_status_inbox">{{item.status}}</view>
+            <view class="content_status_inbox">{{item.status_name}}</view>
           </view>
         </view>
       </view>
       <!-- more -->
-      <view wx:if="{{item.offer_type == 'job'}}">
-        <view class="content_more" bindtap="getOfferDetail" data-offer_type="job" data-offer_link="{{item.link_offer}}" data-job_company="{{item.job_company}}" data-job_position="{{item.job_position}}">
+      <view wx:if="{{item.offer_type == 1}}">
+        <view class="content_more" bindtap="getOfferDetail" data-offer_type="{{item.offer_type}}" data-offer_link="{{item.link_offer}}" data-job_company="{{item.job_company}}" data-job_position="{{item.job_position}}">
         <image class="content_more_pic" src="/images/home/more.png"></image>
         </view>
       </view>
-      <view wx:if="{{item.offer_type == 'internship'}}">
-        <view class="content_more" bindtap="getOfferDetail" data-offer_type="internship" data-offer_link="{{item.link_offer}}" data-internship_company="{{item.internship_company}}" data-internship_position="{{item.internship_position}}" data-internship_type="{{item.internship_type}}">
+      <view wx:if="{{item.offer_type == 2}}">
+        <view class="content_more" bindtap="getOfferDetail" data-offer_type="{{item.offer_type}}" data-offer_link="{{item.link_offer}}" data-internship_company="{{item.internship_company}}" data-internship_position="{{item.internship_position}}" data-internship_type="{{item.internship_type}}">
         <image class="content_more_pic" src="/images/home/more.png"></image>
         </view>
       </view>
-      <view wx:if="{{item.offer_type == 'further study'}}">
-        <view class="content_more" bindtap="getOfferDetail" data-offer_type="further study" data-offer_link="{{item.link_offer}}" data-study_school="{{item.study_school}}" data-study_type="{{item.study_type}}" data-study_major="{{item.study_major}}">
+      <view wx:if="{{item.offer_type == 3}}">
+        <view class="content_more" bindtap="getOfferDetail" data-id="{{item.id}}" data-offer_type="{{item.offer_type}}" data-offer_link="{{item.link_offer}}" data-study_school="{{item.study_school}}" data-study_type="{{item.study_type}}" data-study_major="{{item.study_major}}">
         <image class="content_more_pic" src="/images/home/more.png"></image>
         </view>
       </view>

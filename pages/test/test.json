@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "slider": "/component/slider/slider",
+    "slide-delete": "/component/slide-delete/slide-delete"
+  }
 }

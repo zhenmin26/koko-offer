@@ -37,10 +37,11 @@
 .section{
   height: 150rpx;
   width: 700rpx;
-  border-style: solid;
-  border-color: wheat;
+  border-bottom: 2px solid rgb(228, 216, 216);
+  /* border-style: solid;
+  border-color: wheat; */
   border-radius: 0.3cm;
-  border-width: 6rpx;
+  /* border-width: 6rpx; */
   padding: 10rpx;
   box-sizing: border-box;
 }
@@ -50,7 +51,8 @@
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 500;
-  color: grey;
+  /* color: grey; */
+  color: #F1C40F;
   /* background-color: yellowgreen; */
   margin: 5rpx;
   box-sizing: border-box;
@@ -62,6 +64,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 350;
+  color: gray;
 }
 
 .picker_text{
@@ -82,7 +85,7 @@
 
 .button{
   /* background-color: #62b900; */
-  background-color: rgb(115, 201, 139);
+  background-color: rgb(133, 173, 87);
   color: white;
   margin: 30rpx;
   border-radius: 8px;

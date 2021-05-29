@@ -16,7 +16,8 @@
 .learn_inbox1{
   height: 180rpx;
   box-sizing: border-box;
-  border: solid 2px green;
+  border: solid 3px rgba(12, 122, 21, 0.5);
+  /* border: solid 3px rgba(235, 197, 69, 1); */
   border-radius: 5px;
 }
 
@@ -36,13 +37,13 @@
   border-radius: 5px;
   background-color: #7AAF49;
   box-sizing: border-box;
-  padding-top: 20rpx;
-  padding-left: 10rpx;
+  padding-top: 10rpx;
+  padding-left: 46rpx;
 }
 
 .learn_inbox1_bottom{
   height: 85rpx;
-  padding-top: 15rpx;
+  padding-top: 10rpx;
   padding-left: 20rpx;
   font-size: 40rpx;
   font-weight: bold;
@@ -51,14 +52,15 @@
 
 .learn_box2{
   height: 100rpx;
-  padding: 5rpx 15rpx 5rpx 15rpx;
+  padding: 15rpx 0rpx 0rpx 0rpx;
 }
 
 .learn_inbox2{
-  height: 90rpx;
+  height: 95rpx;
   box-sizing: border-box;
-  border: solid 2px #7AAF49;
-  border-radius: 5px;
+  border-bottom: solid 3px rgb(245,245,245,1);
+  border-radius: 2px;
+  padding-left: 15rpx;
 }
 
 .learn_inbox2_icon{
@@ -78,9 +80,15 @@
   height: 80rpx;
   box-sizing: border-box;
   padding-top: 18rpx;
+  padding-left: 3rpx;
   float: left;
   font-family: Arial, Helvetica, sans-serif;
   word-spacing: -0.8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgb(81,81,81);
+  /* color: gray; */
 }
 
 .learn_inbox2_enter{

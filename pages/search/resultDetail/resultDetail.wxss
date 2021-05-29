@@ -1,0 +1,118 @@
+/* pages/search/resultDetail/resultDetail.wxss */
+.product-list{
+  width: 730rpx;
+  margin-left: 10rpx;
+}
+
+.button_area{
+  width: 750rpx;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  position: fixed;
+  height: 11%;
+  bottom: 0;
+}
+
+.botton_outerBox{
+  box-sizing: content-box;
+  margin: 15rpx;
+}
+
+.button_add{
+  background-color: rgb(133, 173, 87);
+  font-size: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.button_delete{
+  /* background-color: rgb(243, 156, 18); */
+  background-color: #F1C40F;
+  font-size: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.offerinfo_outerBox{
+  display: flex;
+  box-sizing: content-box;
+  padding: 20rpx 20rpx 0rpx 20rpx;
+}
+
+.offerInfo{
+  color: gray;
+  display: flex;
+  /* margin-left: 50rpx; */
+  width: 100%;
+  justify-content: center;
+}
+
+.offerInfo_text{
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  font-size: 18px;
+  /* color: rgb(59, 55, 55);  */
+  color: #F1C40F;
+  font-weight: 600;
+}
+
+.img{
+  display: flex;
+  text-align: right;
+  margin-top: -3.5px;
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.record_outerbox{
+  padding-top: 10rpx;
+  width: 750rpx;
+  height: 71.7%;
+  position: fixed;
+  overflow: scroll;
+}
+
+.record_box{
+  /* width: 500rpx;
+  height: 100rpx;
+  box-sizing: border-box;
+  padding: 5px; */
+  height: 100rpx;
+  margin: 0px 0px 0px 5px;
+}
+
+.weui-cell-line{
+  margin-left: 5px;
+  border-left: 2px solid #ddd;
+  /* height: 100px;  */
+  background: #fff
+}
+.weui-cell-circle{
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 10px;
+  height: 10px;
+  border-color: #ADD975;
+  /* position:absolute;
+  z-index: 1000; */
+}
+
+.record_status{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin-left: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #71747A;
+}
+
+.record_time{
+  margin-top: 5px;
+  margin-left: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #969AA3;
+}

@@ -1,69 +1,97 @@
 <!--pages/record_more/record_more.wxml-->
 <!-- header bar -->
 <view>
-  <header headerIcon="home" headerText="Details"></header>
+  <header headerIcon="home" headerText="详情"></header>
 </view>
 
 <!-- offer title info -->
 <view class="offerinfo_outerBox">
-  <view wx:if="{{offer.offer_type == 'job'}}" class="offerInfo">
+  <view wx:if="{{offer.offer_type == 1}}" class="offerInfo">
     <view class="offerInfo_text">{{offer.job_company}}</view>
     <view class="offerInfo_text">{{offer.job_position}}</view>
   </view>
-  <view wx:if="{{offer.offer_type == 'internship'}}" class="offerInfo">
+  <view wx:if="{{offer.offer_type == 2}}" class="offerInfo">
     <view class="offerInfo_text">{{offer.internship_company}}</view>
     <view class="offerInfo_text">{{offer.internship_position}}</view>
     <view class="offerInfo_text">{{offer.internship_type}}</view>
   </view>
-  <view wx:if="{{offer.offer_type == 'further study'}}" class="offerInfo">
+  <view wx:if="{{offer.offer_type == 3}}" class="offerInfo">
     <view class="offerInfo_text">{{offer.study_school}}</view>
     <view class="offerInfo_text">{{offer.study_type}}</view>
     <view class="offerInfo_text">{{offer.study_major}}</view>
   </view>
-  <view class="img">
-    <image class="img" src="/images/offer_more/record.png"></image>
+</view>
+
+<!-- records -->
+<view class="product-list">
+  <view class="weui-cell-circle"></view>
+  <view class="product-item" wx:for="{{records}}" wx:for-index="index" wx:key="{{item.id}}">
+    <!-- <view class="weui-cell-circle"></view> -->
+    <view class="weui-cell-line">
+    <movable-area>
+      <movable-view out-of-bounds="true" direction="horizontal" x="{{item.xmove}}"
+        inertia="true"
+        data-productIndex="{{index}}"
+        bindtouchstart="handleTouchStart"
+        bindtouchend="handleTouchEnd"
+        bindchange="handleMovableChange">
+        <view class="product-item-wrap">
+          <view class="product-movable-item">
+            <view class="product-movable-item-name">{{item.status_name}}</view>
+            <view class="product-movable-item-code">{{item.time}}</view>
+          </view>
+        </view>
+      </movable-view>
+    </movable-area>
+    </view>
+    <view class="circle-background"><view class="weui-cell-circle"></view></view>
+    <view class="delete-btn" data-id="{{item.id}}" data-index="{{index}}" bindtap="handleDeleteProduct">
+      <view class="delete-button">删除</view>
+    </view>
   </view>
 </view>
 
 
-
 <!-- all status records -->
-<view class="record_outerbox">
+<!-- <view class="record_outerbox">
   <view class="record_box">
     <view class="weui-cell-circle"></view>
-    <block wx:for="{{records}}" wx:key="index">
-      <view  class="weui-cell-line" wx:if="{{item.offer_type == 'job'}}">
+      <block wx:for="{{records}}" wx:key="index">
+      <view class="weui-cell-line" wx:if="{{item.offer_type == 1}}">
         <view>
-          <view class="record_status">{{item.status}}</view>
-          <view class="record_time">{{item.time}}</view>
+          <slide-delete bindaction="deleteRecord" data-record_id="{{item.id}}" data-index="{{index}}">
+            <view class="record_status">{{item.status_name}}</view>
+            <view class="record_time">{{item.time}}</view>
+          </slide-delete>
         </view>
       </view>
-      <view class="weui-cell-line" wx:if="{{item.offer_type == 'internship'}}">
+      <view class="weui-cell-line" wx:if="{{item.offer_type == 2}}">
         <view>
-          <view class="record_status">{{item.status}}</view>
-          <view class="record_time">{{item.time}}</view>
+          <slide-delete bindaction="deleteRecord" data-record_id="{{item.id}}" data-index="{{index}}">
+            <view class="record_status">{{item.status_name}}</view>
+            <view class="record_time">{{item.time}}</view>
+          </slide-delete>
         </view>
       </view>
-      <view class="weui-cell-line" wx:if="{{item.offer_type == 'further study'}}">
+      <view class="weui-cell-line" wx:if="{{item.offer_type == 3}}">
         <view>
-          <view class="record_status">{{item.status}}</view>
-          <view class="record_time">{{item.time}}</view>
+          <slide-delete bindaction="deleteRecord" data-record_id="{{item.id}}" data-index="{{index}}">
+            <view class="record_status">{{item.status_name}}</view>
+            <view class="record_time">{{item.time}}</view>
+          </slide-delete>
         </view>
       </view>
       <view class="weui-cell-circle"></view>
     </block>
   </view>
-</view>
+</view> -->
 
 <!-- button area -->
 <view class="button_area">
   <view class="botton_outerBox">
-    <button bindtap="addRecord" data-records="{{records}}" class="button_add" style="width:320rpx;">Add a record</button>
+    <button bindtap="addRecord" data-records="{{records}}" class="button_add" style="width:320rpx;">添加进展</button>
   </view>
   <view class="botton_outerBox">
-    <button bindtap="deleteOffer" data-records="{{records}}" class="button_delete" style="width:320rpx;">Delete offer</button>
+    <button bindtap="deleteOffer" data-records="{{records}}" class="button_delete" style="width:320rpx;">删除申请</button>
   </view>
 </view>
-<!-- <view class="record_outerbox">
-  <view class="img"></view>
-</view> -->

@@ -1,0 +1,52 @@
+<!--pages/search/search.wxml-->
+<view class="flash">
+  <swiper
+    indicator-dots="true"
+    autoplay="true"
+    style='height:300rpx'>
+    <block wx:for="{{swiper_pics}}" wx:key="index">
+      <swiper-item>
+          <!-- <image class="image" src="/images/search/{{item.name}}.png"></image> -->
+          <image class="image" src="http://api.luzhenmin.com:8000/images/search/{{item.name}}.png"></image>
+          
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<searchHaveHistory id="history"
+	bind:searchEvent="searchEvent" data-inputVal="{{inputVal}}">
+</searchHaveHistory>
+
+<!-- <view wx:if="{{search_result == null}}" class="tip">
+  在输入框内输入关键字进行搜索
+</view> -->
+
+<view wx:if="{{search_result.length != 0}}">
+<block wx:for="{{search_result}}" wx:key="index" class="outerbox">
+  <view wx:if="{{item.job_company!=null}}" class="resultbar" data-id="{{item.id}}" bindtap="getSearchDetail" data-type="1" data-job_company="{{item.job_company}}" data-job_position="{{item.job_position}}" data-link_offer="{{item.link_offer}}">
+    <view class="index">{{index+1}}</view>
+    <view class="element">{{item.job_company}}</view>
+    <view class="element">{{item.job_position}}</view>
+    <view class="element">{{item.time}}</view>
+  </view>
+  <view wx:if="{{item.internship_company!=null}}" class="resultbar" data-id="{{item.id}}" bindtap="getSearchDetail" data-type="2" data-internship_company="{{item.internship_company}}" data-internship_position="{{item.internship_position}}" data-internship_type="{{item.internship_type}}" data-link_offer="{{item.link_offer}}">
+    <view class="index">{{index+1}}</view>
+    <view class="element">{{item.internship_company}}</view>
+    <view class="element">{{item.internship_position}}</view>
+    <view class="element">{{item.internship_type}}</view>
+    <view class="element">{{item.time}}</view>
+  </view>
+  <view wx:if="{{item.study_school!=null}}" class="resultbar" data-id="{{item.id}}" bindtap="getSearchDetail" data-type="3" data-study_school="{{item.study_school}}" data-study_major="{{item.study_major}}" data-study_type="{{item.study_type}}" data-link_offer="{{item.link_offer}}">
+    <view class="index">{{index+1}}</view>
+    <view class="element">{{item.study_school}}</view>
+    <view class="element">{{item.study_major}}</view>
+    <view class="element">{{item.study_type}}</view>
+    <view class="element">{{item.time}}</view>
+  </view>
+</block>
+</view>
+
+<view wx:else class="tip">
+  没有相关记录
+</view>

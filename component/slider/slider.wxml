@@ -1,0 +1,18 @@
+<!--component/slider/slider.wxml-->
+<view class="container">
+  <movable-area>
+    <movable-view direction="horizontal" out-of-bounds="{{true}}" friction="150" x="{{x}}"
+      bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" >
+      <view class="card-container">
+        <view>{{text}}</view>
+        <view class="show-operations" catchtouchstart="toggle" catchtouchend="emptyFunc">...</view>
+      </view>
+    </movable-view>
+  </movable-area>
+  <view class="operations-content" >
+    <view class="operation-button" catchtap="handleDelete">
+      删除
+    </view>
+  </view>
+</view>
+

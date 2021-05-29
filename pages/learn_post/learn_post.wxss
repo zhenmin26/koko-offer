@@ -1,4 +1,6 @@
 /* pages/learn_post/learn_post.wxss */
+@import "../../Util/wxParse/wxParse.wxss";
+
 .title{
   padding-top:50rpx;
   height: 58rpx;
@@ -8,6 +10,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
+  color: #F1C40F;
 }
 
 .divLine{
@@ -20,10 +23,13 @@
 
 .content{
   box-sizing: border-box;
-  width: 84%;
+  width: 100%;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
   position: absolute;
-  left: 8%;
   padding-top: 8rpx;
+  color: rgb(81,81,81);
+
 }
 
 .content_text{

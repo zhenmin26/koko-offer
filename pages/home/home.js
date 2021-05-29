@@ -8,7 +8,7 @@ Page({
   data: {
     no_record: false,
     records: null,
-    tips: 'Loading',
+    tips: '加载中',
   },
 
   /**
@@ -30,6 +30,7 @@ Page({
    */
   onShow: function () {
     var that = this;
+    console.log(wx.getStorageSync('id'))
     if(wx.getStorageSync('id') != null){
       wx.request({
         url: 'https://api.luzhenmin.com/getOffer',
@@ -40,6 +41,7 @@ Page({
           'content-type': 'application/json' //默认值
         },
         success: (res) => {
+          // console.log(res.data.data)
           if((res.data.data).length==0){
             that.setData({
               no_record: true,
@@ -123,9 +125,9 @@ Page({
   },
 
   getOfferDetail: function (e) {
-    // console.log(e.currentTarget.dataset.offer_target);
+    // console.log(e.currentTarget.dataset);
     let offer = {};
-    if(e.currentTarget.dataset.offer_type == "job"){
+    if(e.currentTarget.dataset.offer_type == 1){
       offer = {
         "link_offer": e.currentTarget.dataset.offer_link,
         "offer_type": e.currentTarget.dataset.offer_type,
@@ -133,7 +135,7 @@ Page({
         "job_position": e.currentTarget.dataset.job_position
       };
     }
-    if(e.currentTarget.dataset.offer_type == "internship"){
+    if(e.currentTarget.dataset.offer_type == 2){
       offer = {
         "link_offer": e.currentTarget.dataset.offer_link,
         "offer_type": e.currentTarget.dataset.offer_type,
@@ -142,7 +144,7 @@ Page({
         "internship_type": e.currentTarget.dataset.internship_type
       };
     }
-    if(e.currentTarget.dataset.offer_type == "further study"){
+    if(e.currentTarget.dataset.offer_type == 3){
       offer = {
         "link_offer": e.currentTarget.dataset.offer_link,
         "offer_type": e.currentTarget.dataset.offer_type,

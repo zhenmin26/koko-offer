@@ -1,4 +1,15 @@
-<!--pages/test/test.wxml-->
+<view>
+  <block wx:for="{{test_list}}" wx:key="{{index}}">
+    <slider text="{{item}}" index="{{index}}" class="list-item" catch:delete="deleteItem"/>
+  </block>
+</view>
+
+
+
+
+
+
+
 
 <!-- <picker mode="multiSelector" bindchange="bindMultiPickerChangeOfStudy" bindcolumnchange="bindMultiPickerColumnChangeOfStudy" value="{{multiIndexOfStudy}}" range="{{multiArrayOfStudy}}">
 　　<view class="picker">
@@ -17,7 +28,7 @@
   <view>- THE END -</view>
 </view> -->
 
-<view class='weui-cell-third'>
+<!-- <view class='weui-cell-third'>
   <block wx:for="{{axis}}" wx:key="*this">
     <view class='weui-cell-list'>
       <view class='weui-cell-circle'></view>
@@ -28,7 +39,7 @@
       </view>
     </view>
   </block>
-</view>
+</view> -->
 
 
 
@@ -65,4 +76,4 @@
       </view>
     </view>
   </form>
-</view> -->
+</view>

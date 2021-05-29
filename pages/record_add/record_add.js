@@ -6,7 +6,7 @@ Page({
    */
   data: {
     record:{},
-    status: ['', 'application submitted', 'interview invitation', 'interview finished', 'get rejected', 'offer!'],
+    status: ['', '已提交申请', '收到面试邀请', '完成面试', '被拒', '收到offer！'],
     objectArray: [
       {
         id: 0,
@@ -14,23 +14,23 @@ Page({
       },
       {
         id: 1,
-        name: 'application submitted'
+        name: '已提交申请'
       },
       {
         id: 2,
-        name: 'interview invitation'
+        name: '收到面试邀请'
       },
       {
         id: 3,
-        name: 'interview finished'
+        name: '完成面试'
       },
       {
         id: 4,
-        name: 'get rejected'
+        name: '被拒'
       },
       {
         id: 5,
-        name: 'offer!'
+        name: '收到offer！'
       }
     ],
     indexOfStatus: 0,
@@ -111,8 +111,9 @@ Page({
   },
 
   addRecord: function(event) {
-    console.log(this.data.record[0].link_offer);
-    if(this.data.record[0].offer_type == 'job'){
+    // console.log(this.data.record[this.data.record.length-1].time)
+
+    if(this.data.record[0].offer_type == 1){
       wx.request({
         url: 'https://api.luzhenmin.com/addRecord',
         data: {
@@ -121,8 +122,9 @@ Page({
           job_company: this.data.record[0].job_company,
           job_position: this.data.record[0].job_position,
           link_offer: this.data.record[0].link_offer,
-          status: this.data.status[this.data.indexOfStatus],
+          status: this.data.indexOfStatus,
           create_time: this.data.create_time,
+          latest_time: this.data.record[this.data.record.length-1].time,
           number: (this.data.record[this.data.record.length-1]).number
         },
         header: {
@@ -136,7 +138,7 @@ Page({
         }
       })
     }
-    if(this.data.record[0].offer_type == 'internship'){
+    if(this.data.record[0].offer_type == 2){
       wx.request({
         url: 'https://api.luzhenmin.com/addRecord',
         data: {
@@ -146,8 +148,9 @@ Page({
           internship_position: this.data.record[0].internship_position,
           internship_type: this.data.record[0].internship_type,
           link_offer: this.data.record[0].link_offer,
-          status: this.data.status[this.data.indexOfStatus],
+          status: this.data.indexOfStatus,
           create_time: this.data.create_time,
+          latest_time: this.data.record[this.data.record.length-1].time,
           number: (this.data.record[this.data.record.length-1]).number
         },
         header: {
@@ -161,7 +164,7 @@ Page({
         }
       })
     }
-    if(this.data.record[0].offer_type == 'further study'){
+    if(this.data.record[0].offer_type == 3){
       wx.request({
         url: 'https://api.luzhenmin.com/addRecord',
         data: {
@@ -171,8 +174,9 @@ Page({
           study_type: this.data.record[0].study_type,
           study_major: this.data.record[0].study_major,
           link_offer: this.data.record[0].link_offer,
-          status: this.data.status[this.data.indexOfStatus],
+          status: this.data.indexOfStatus,
           create_time: this.data.create_time,
+          latest_time: this.data.record[this.data.record.length-1].time,
           number: (this.data.record[this.data.record.length-1]).number
         },
         header: {
@@ -186,6 +190,5 @@ Page({
         }
       })
     }
-      
   }
 })

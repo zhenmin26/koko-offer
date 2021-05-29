@@ -16,8 +16,8 @@
 }
 
 .setting_icon_pic{
-  width: 60rpx;
-  height: 60rpx;
+  width: 45rpx;
+  height: 45rpx;
 }
 
 .setting_content{
@@ -32,4 +32,53 @@
   display: flex;
   align-items: center;
   flex-grow: 1;
+  color: rgb(81,81,81);
+}
+
+.userinfo{
+  display: block;
+  margin: 10rpx 0rpx 20rpx 0rpx;
+  /* background-color: rgb(133, 173, 87, 0.9); */
+  border-radius: 3px;
+}
+
+.imgbox{
+  display: flex;
+  justify-content: center;
+}
+
+.userimg{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 20rpx;
+  justify-content: center;
+}
+
+.img{
+  display: flex;
+  align-content: center;
+  justify-content: center; 
+  width: 180rpx;
+  height: 180rpx;
+  border: solid 2px red;
+  border-radius: 50rpx;
+}
+
+.username{
+  display: flex;
+  align-content: center;
+  justify-content: center; 
+  /* background-color: salmon; */
+  margin-top: 10rpx;
+  padding-bottom: 20rpx;
+  /* border-bottom: solid 2px gray; */
+  /* color: rgb(216, 116, 23, 0.8); */
+  color: #F1C40F;
+  /* color: rgb(133,173,87); */
+  /* color: #8a8a8a; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
 }

@@ -1,0 +1,22 @@
+<!--pages/setting/contantMe/contactMe.wxml-->
+<view>
+  <header headerIcon="my" headerText="联系我"></header>
+</view>
+<view class="outerbox">
+  <view class="content">谢谢你对KoKo-offer的支持！</view>
+  <view class="content">如果你对KoKo-offer感兴趣，这是项目的GitHub地址：</view>
+  <view class="text">
+    <!-- <image></image> -->
+    <text>https://github.com/zhenmin26/koko-offer
+    </text>
+  </view>
+  <view class="content">如果你有意见或建议，亦或是当前岗位或项目中没有你的申请，可以通过邮件联系我：</view>
+  <view class="text">
+    <!-- <image></image> -->
+    <text>zhenmin0226@163.com
+    </text>
+  </view> 
+</view>
+
+
+

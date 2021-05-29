@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "header": "/component/header/header"
+    "header": "/component/header/header",
+    "slide-delete": "/component/slide-delete/slide-delete",
+    "slider": "/component/slider/slider"
   }
 }

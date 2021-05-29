@@ -1,7 +1,10 @@
 <!--pages/learn_post/learn_post.wxml-->
-<view class="title">{{post_content.title}}</view>
+<import src="../../Util/wxParse/wxParse.wxml"/>
+
+<view class="title">{{title}}</view>
 <view class="divLine"></view>
 <view class="content">
-  <view>{{post_content.content}}</view>
+  <template is="wxParse" data="{{wxParseData: content.nodes}}"></template>
+  <!-- <view>{{post_content.content}}</view> -->
 </view>
 

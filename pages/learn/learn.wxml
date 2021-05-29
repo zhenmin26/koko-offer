@@ -1,23 +1,28 @@
 <!--pages/learn/learn.wxml-->
 <!-- header bar -->
 <view>
-  <header headerIcon="learn" headerText="Learn"></header>
+  <header headerIcon="rest" headerText="休闲"></header>
 </view>
 
 <!-- learn area -->
-<view class="intro">
-  Here you may find some interesting videos or soothing music to release your stress, and some practical articles.
+<view class="learn_box1">
+  <view class="learn_inbox1">
+    <view class="intro">
+      <text>在申请阶段，你可能感到十分焦虑且压力山大。\n在休闲版块，你可以找到有趣或有帮助的文章、音乐、视频。点击并阅读感兴趣的文章吧！</text>
+    </view>
+  </view>
 </view>
-<block wx:for="{{tops}}" wx:key="index">
+
+<!-- <block wx:for="{{tops}}" wx:key="index">
   <view class="learn_box1">
     <view class="learn_inbox1">
       <view class="learn_inbox1_top">
-        <view class="learn_inbox1_intop">TOP articles</view>
+        <view class="learn_inbox1_intop">热门文章</view>
       </view>
       <view class="learn_inbox1_bottom">{{item.content}}</view>
     </view>
   </view>
-</block>
+</block> -->
 
 <!-- loading -->
 <block wx:if="{{articles == null}}">
@@ -35,12 +40,12 @@
   <view class="learn_box2">
     <view class="learn_inbox2">
       <view class="learn_inbox2_icon">
-        <image class="learn_inbox2_icon_pic" src="/images/learn/{{item.type}}.png"></image>
+        <image class="learn_inbox2_icon_pic" src="http://api.luzhenmin.com:8000/images/learn/{{item.type}}.png"></image>
       </view>
       <view class="learn_inbox2_text">{{item.title}}</view>
       <!-- <navigator url="/pages/learn_post/learn_post"> -->
         <view class="learn_inbox2_enter" bindtap="getPost" data-title="{{item.title}}">
-          <image class="learn_inbox2_enter_pic" src="/images/learn/enter.png"></image>
+          <image class="learn_inbox2_enter_pic" src="http://api.luzhenmin.com:8000/images/learn/enter.png"></image>
         </view>
     </view>
   </view>

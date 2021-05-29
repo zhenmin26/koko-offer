@@ -1,5 +1,5 @@
 function deleteOffer(record) {
-  if(record[0].offer_type == 'job'){
+  if(record[0].offer_type == 1){
     wx.request({
       url: 'https://api.luzhenmin.com/deleteJobOffer',
       data: {
@@ -19,7 +19,7 @@ function deleteOffer(record) {
       }
     })
   }
-  if(record[0].offer_type == 'internship'){
+  if(record[0].offer_type == 2){
     wx.request({
       url: 'https://api.luzhenmin.com/deleteInternshipOffer',
       data: {
@@ -40,7 +40,7 @@ function deleteOffer(record) {
       }
     })
   }
-  if(record[0].offer_type == 'further study'){
+  if(record[0].offer_type == 3){
     wx.request({
       url: 'https://api.luzhenmin.com/deleteStudyOffer',
       data: {
