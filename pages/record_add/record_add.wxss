@@ -65,6 +65,7 @@
   font-style: normal;
   font-weight: 350;
   color: gray;
+  font-weight: 600;
 }
 
 .picker_text{

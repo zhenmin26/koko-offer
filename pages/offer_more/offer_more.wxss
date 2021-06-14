@@ -194,12 +194,14 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-weight: 600;
 }
 
 .product-list .product-item-wrap .product-movable-item-code {
   font-family: PingFangSC-Regular;
   font-size: 28rpx;
   color: #969AA3;
+  font-weight: 600;
 }
 
 .product-list .product-item-wrap .product-movable-item-amount {

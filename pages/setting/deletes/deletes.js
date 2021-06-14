@@ -32,7 +32,7 @@ Page({
       wx.request({
         url: 'https://api.luzhenmin.com/getDeletedOffer',
         data: {
-          userid: wx.getStorageSync('id') || 'err'
+          userid: (getApp().globalData.uid || 'err')
         },
         header: {
           'content-type': 'application/json' //默认值

@@ -7,7 +7,8 @@ App({
     wx.setStorageSync('logs', logs)
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    uid: null
   },
 
   getOpenid: function() {
@@ -25,7 +26,7 @@ App({
                 'content-type': 'application/json' //默认值
               },
               success: (res) => {
-                wx.setStorageSync('id', res.data.id)
+                getApp().globalData.uid = res.data.id;
                 let resOfRequest = {
                   status: 200,
                   data: res.data.id

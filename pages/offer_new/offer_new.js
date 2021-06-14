@@ -1,13 +1,15 @@
 // pages/record_new/record_new.js
-Page({
+const app = getApp()
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
     yes: [{
       id: 1,
-      value: '是'
+      value: '是',
+      checked: true
     }, {
       id: 2,
       value: '否'
@@ -113,6 +115,10 @@ Page({
       }
     ],
     indexOfStatus: 0,
+
+    form: {
+      job: '',
+    }
   },
 
   /**
@@ -523,111 +529,322 @@ Page({
     else{
       yesresult = 1;
     }
-    // console.log(yesresult)
     if(this.data.indexOfOfferType == 1){
-      wx.request({
-        url: 'https://api.luzhenmin.com/addJobOffer',
-        data: {
-          userid: (wx.getStorageSync('id') || 'err'),
-          offer_type: this.data.indexOfOfferType,
-          job_company: this.data.multiArrayOfJob[0][this.data.multiIndexOfJob[0]],
-          job_position: this.data.multiArrayOfJob[1][this.data.multiIndexOfJob[1]],
-          status: this.data.indexOfStatus,
-          create_time: this.data.create_time,
-          yesresult: yesresult
-        },
-        header: {
-          'content-type': 'application/json' //默认值
-        },
-        success: (res) => {
-          wx.showToast({
-            title: "success",
-            icon: 'success',
-            duration: 1000,
-            complete:()=>{
-              setTimeout(
-                ()=> {
-                  wx.navigateBack({
-                    delta: 0,
-                  })
-                },
-                1000
-              )
+      if(this.data.multiArrayOfJob[0][this.data.multiIndexOfJob[0]] == undefined){
+        wx.showModal({
+          title: '提示',
+          content: '请选择公司和岗位',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
             }
-          })        
-        
-        }
-      })
+          }
+        })
+      }
+      if(this.data.multiIndexOfJob[0] == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择公司',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      }
+      else if(this.data.multiIndexOfJob[1] == 0 )(
+        wx.showModal({
+          title: '提示',
+          content: '请选择工作岗位',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      )
+      else if(this.data.indexOfStatus == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择申请进展',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else if(this.data.create_time === undefined){
+        wx.showModal({
+          title: '提示',
+          content: '请选择更新时间',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else{
+        wx.request({
+          url: 'https://api.luzhenmin.com/addJobOffer',
+          data: {
+            userid: (getApp().globalData.uid || 'err'),
+            offer_type: this.data.indexOfOfferType,
+            job_company: this.data.multiArrayOfJob[0][this.data.multiIndexOfJob[0]],
+            job_position: this.data.multiArrayOfJob[1][this.data.multiIndexOfJob[1]],
+            status: this.data.indexOfStatus,
+            create_time: this.data.create_time,
+            yesresult: yesresult
+          },
+          header: {
+            'content-type': 'application/json' //默认值
+          },
+          success: (res) => {
+            wx.showToast({
+              title: "success",
+              icon: 'success',
+              duration: 1000,
+              complete:()=>{
+                setTimeout(
+                  ()=> {
+                    wx.navigateBack({
+                      delta: 0,
+                    })
+                  },
+                  1000
+                )
+              }
+            })        
+          
+          }
+        })
+      }
     }
     if(this.data.indexOfOfferType == 2){
-      wx.request({
-        url: 'https://api.luzhenmin.com/addInternshipOffer',
-        data: {
-          userid: (wx.getStorageSync('id') || 'err'),
-          offer_type: this.data.indexOfOfferType,
-          internship_company: this.data.multiArrayOfInternship[0][this.data.multiIndexOfInternship[0]],
-          internship_position: this.data.multiArrayOfInternship[1][this.data.multiIndexOfInternship[1]],
-          internship_type: this.data.arrayOfInternshipType[this.data.indexOfInternshipType],
-          status: this.data.indexOfStatus,
-          create_time: this.data.create_time,
-          yesresult: yesresult
-        },
-        header: {
-          'content-type': 'application/json' //默认值
-        },
-        success: (res) => {
-          wx.showToast({
-            title: "success",
-            icon: 'success',
-            duration: 1000,
-            complete:()=>{
-              setTimeout(
-                ()=> {
-                  wx.navigateBack({
-                    delta: 0,
-                  })
-                },
-                1000
-              )
+      if(this.data.multiArrayOfInternship[0][this.data.multiIndexOfInternship[0]] == undefined){
+        wx.showModal({
+          title: '提示',
+          content: '请选择实习公司和岗位',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
             }
-          })        
-        }
-      })
+          }
+        })
+      }
+      else if(this.data.multiIndexOfInternship[0] == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择实习公司',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      }
+      else if(this.data.multiIndexOfInternship[1] == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择实习岗位',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      }
+      else if(this.data.indexOfInternshipType == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择实习类型',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      }
+      else if(this.data.indexOfStatus == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择申请进展',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else if(this.data.create_time === undefined){
+        wx.showModal({
+          title: '提示',
+          content: '请选择更新时间',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else{
+        wx.request({
+          url: 'https://api.luzhenmin.com/addInternshipOffer',
+          data: {
+            userid: (getApp().globalData.uid || 'err'),
+            offer_type: this.data.indexOfOfferType,
+            internship_company: this.data.multiArrayOfInternship[0][this.data.multiIndexOfInternship[0]],
+            internship_position: this.data.multiArrayOfInternship[1][this.data.multiIndexOfInternship[1]],
+            internship_type: this.data.arrayOfInternshipType[this.data.indexOfInternshipType],
+            status: this.data.indexOfStatus,
+            create_time: this.data.create_time,
+            yesresult: yesresult
+          },
+          header: {
+            'content-type': 'application/json' //默认值
+          },
+          success: (res) => {
+            wx.showToast({
+              title: "success",
+              icon: 'success',
+              duration: 1000,
+              complete:()=>{
+                setTimeout(
+                  ()=> {
+                    wx.navigateBack({
+                      delta: 0,
+                    })
+                  },
+                  1000
+                )
+              }
+            })        
+          }
+        })
+      
+      }
     }
     if(this.data.indexOfOfferType == 3){
-      wx.request({
-        url: 'https://api.luzhenmin.com/addStudyOffer',
-        data: {
-          userid: (wx.getStorageSync('id') || 'err'),
-          offer_type: this.data.indexOfOfferType,
-          study_type: this.data.studyType[this.data.indexOfStudyType],
-          study_school: this.data.multiArrayOfStudy[0][this.data.multiIndexOfStudy[0]],
-          study_major:this.data.multiArrayOfStudy[1][this.data.multiIndexOfStudy[1]],
-          status: this.data.indexOfStatus,
-          create_time: this.data.create_time,
-          yesresult: yesresult
-        },
-        header: {
-          'content-type': 'application/json' //默认值
-        },
-        success: (res) => {
-          wx.showToast({
-            title: "success",
-            icon: 'success',
-            duration: 1000,
-            complete:()=>{
-              setTimeout(
-                ()=> {
-                  wx.navigateBack({
-                    delta: 0,
-                  })
-                },
-                1000
-              )
+      if(this.data.indexOfStudyType == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择项目类型',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
             }
-          })        
-        }
-      })
+          }
+        })
+      }
+      else if(this.data.multiArrayOfStudy[0][this.data.multiIndexOfStudy[0]] == undefined){
+        wx.showModal({
+          title: '提示',
+          content: '请选择学校和项目',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      }
+      else if(this.data.multiIndexOfStudy[0] == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择学校',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      }
+      else if(this.data.multiIndexOfStudy[1] == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择项目',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      }
+      else if(this.data.indexOfStatus == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择申请进展',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else if(this.data.create_time === undefined){
+        wx.showModal({
+          title: '提示',
+          content: '请选择更新时间',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else{
+        wx.request({
+          url: 'https://api.luzhenmin.com/addStudyOffer',
+          data: {
+            userid: (getApp().globalData.uid || 'err'),
+            offer_type: this.data.indexOfOfferType,
+            study_type: this.data.studyType[this.data.indexOfStudyType],
+            study_school: this.data.multiArrayOfStudy[0][this.data.multiIndexOfStudy[0]],
+            study_major:this.data.multiArrayOfStudy[1][this.data.multiIndexOfStudy[1]],
+            status: this.data.indexOfStatus,
+            create_time: this.data.create_time,
+            yesresult: yesresult
+          },
+          header: {
+            'content-type': 'application/json' //默认值
+          },
+          success: (res) => {
+            wx.showToast({
+              title: "success",
+              icon: 'success',
+              duration: 1000,
+              complete:()=>{
+                setTimeout(
+                  ()=> {
+                    wx.navigateBack({
+                      delta: 0,
+                    })
+                  },
+                  1000
+                )
+              }
+            })        
+          }
+        })
+      
+      }
     }
   },
 
@@ -641,23 +858,5 @@ Page({
       yes
     })
     console.log(this.data.yes);
-  },
-
-  // postaddManage: function () {
-  //   let yes = '';
-  //     this.data.yes.map((item, index) => {
-  //       if (item.checked) {
-  //         yes = item.id;
-  //       }
-  //     })
-  //   let params = {
-  //     yes: yes,
-  //   }
-  //   addManage(params).then(res => {
-  //     console.log(res);
-  //     // this.setData({
-  //     //   yesresult: res
-  //     // })
-  //   })
-  // }
+  }
 })

@@ -30,12 +30,11 @@ Page({
    */
   onShow: function () {
     var that = this;
-    console.log(wx.getStorageSync('id'))
-    if(wx.getStorageSync('id') != null){
+    if(app.globalData.uid != null){
       wx.request({
         url: 'https://api.luzhenmin.com/getOffer',
         data: {
-          userid: wx.getStorageSync('id') || 'err'
+          userid: app.globalData.uid
         },
         header: {
           'content-type': 'application/json' //默认值
@@ -62,7 +61,7 @@ Page({
             wx.request({
               url: 'https://api.luzhenmin.com/getOffer',
               data: {
-                userid: wx.getStorageSync('id') || 'err'
+                userid: app.globalData.uid
               },
               header: {
                 'content-type': 'application/json' //默认值

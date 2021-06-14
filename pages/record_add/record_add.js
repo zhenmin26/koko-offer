@@ -114,81 +114,160 @@ Page({
     // console.log(this.data.record[this.data.record.length-1].time)
 
     if(this.data.record[0].offer_type == 1){
-      wx.request({
-        url: 'https://api.luzhenmin.com/addRecord',
-        data: {
-          userid: (wx.getStorageSync('id') || 'err'),
-          offer_type: this.data.record[0].offer_type,
-          job_company: this.data.record[0].job_company,
-          job_position: this.data.record[0].job_position,
-          link_offer: this.data.record[0].link_offer,
-          status: this.data.indexOfStatus,
-          create_time: this.data.create_time,
-          latest_time: this.data.record[this.data.record.length-1].time,
-          number: (this.data.record[this.data.record.length-1]).number
-        },
-        header: {
-          'content-type': 'application/json' //默认值
-        },
-        success: (res) => {
-          console.log("insert new job record uccessfully")
-          wx.navigateBack({
-            delta: 0,
-          })
-        }
-      })
+      if(this.data.indexOfStatus == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择申请进展',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else if(this.data.create_time === undefined){
+        wx.showModal({
+          title: '提示',
+          content: '请选择更新时间',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else{
+        wx.request({
+          url: 'https://api.luzhenmin.com/addRecord',
+          data: {
+            userid: (getApp().globalData.uid || 'err'),
+            offer_type: this.data.record[0].offer_type,
+            job_company: this.data.record[0].job_company,
+            job_position: this.data.record[0].job_position,
+            link_offer: this.data.record[0].link_offer,
+            status: this.data.indexOfStatus,
+            create_time: this.data.create_time,
+            latest_time: this.data.record[this.data.record.length-1].time,
+            number: (this.data.record[this.data.record.length-1]).number
+          },
+          header: {
+            'content-type': 'application/json' //默认值
+          },
+          success: (res) => {
+            console.log("insert new job record uccessfully")
+            wx.navigateBack({
+              delta: 0,
+            })
+          }
+        })
+      
+      }
     }
     if(this.data.record[0].offer_type == 2){
-      wx.request({
-        url: 'https://api.luzhenmin.com/addRecord',
-        data: {
-          userid: (wx.getStorageSync('id') || 'err'),
-          offer_type: this.data.record[0].offer_type,
-          internship_company: this.data.record[0].internship_company,
-          internship_position: this.data.record[0].internship_position,
-          internship_type: this.data.record[0].internship_type,
-          link_offer: this.data.record[0].link_offer,
-          status: this.data.indexOfStatus,
-          create_time: this.data.create_time,
-          latest_time: this.data.record[this.data.record.length-1].time,
-          number: (this.data.record[this.data.record.length-1]).number
-        },
-        header: {
-          'content-type': 'application/json' //默认值
-        },
-        success: (res) => {
-          console.log("insert new internship record uccessfully")
-          wx.navigateBack({
-            delta: 0,
-          })
-        }
-      })
+      if(this.data.indexOfStatus == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择申请进展',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else if(this.data.create_time === undefined){
+        wx.showModal({
+          title: '提示',
+          content: '请选择更新时间',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else{
+        wx.request({
+          url: 'https://api.luzhenmin.com/addRecord',
+          data: {
+            userid: (getApp().globalData.uid || 'err'),
+            offer_type: this.data.record[0].offer_type,
+            internship_company: this.data.record[0].internship_company,
+            internship_position: this.data.record[0].internship_position,
+            internship_type: this.data.record[0].internship_type,
+            link_offer: this.data.record[0].link_offer,
+            status: this.data.indexOfStatus,
+            create_time: this.data.create_time,
+            latest_time: this.data.record[this.data.record.length-1].time,
+            number: (this.data.record[this.data.record.length-1]).number
+          },
+          header: {
+            'content-type': 'application/json' //默认值
+          },
+          success: (res) => {
+            console.log("insert new internship record uccessfully")
+            wx.navigateBack({
+              delta: 0,
+            })
+          }
+        })  
+      }
     }
     if(this.data.record[0].offer_type == 3){
-      wx.request({
-        url: 'https://api.luzhenmin.com/addRecord',
-        data: {
-          userid: (wx.getStorageSync('id') || 'err'),
-          offer_type: this.data.record[0].offer_type,
-          study_school: this.data.record[0].study_school,
-          study_type: this.data.record[0].study_type,
-          study_major: this.data.record[0].study_major,
-          link_offer: this.data.record[0].link_offer,
-          status: this.data.indexOfStatus,
-          create_time: this.data.create_time,
-          latest_time: this.data.record[this.data.record.length-1].time,
-          number: (this.data.record[this.data.record.length-1]).number
-        },
-        header: {
-          'content-type': 'application/json' //默认值
-        },
-        success: (res) => {
-          console.log("insert new record uccessfully")
-          wx.navigateBack({
-            delta: 0,
-          })
-        }
-      })
+      if(this.data.indexOfStatus == 0){
+        wx.showModal({
+          title: '提示',
+          content: '请选择申请进展',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else if(this.data.create_time === undefined){
+        wx.showModal({
+          title: '提示',
+          content: '请选择更新时间',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })  
+      }
+      else{
+        wx.request({
+          url: 'https://api.luzhenmin.com/addRecord',
+          data: {
+            userid: (getApp().globalData.uid || 'err'),
+            offer_type: this.data.record[0].offer_type,
+            study_school: this.data.record[0].study_school,
+            study_type: this.data.record[0].study_type,
+            study_major: this.data.record[0].study_major,
+            link_offer: this.data.record[0].link_offer,
+            status: this.data.indexOfStatus,
+            create_time: this.data.create_time,
+            latest_time: this.data.record[this.data.record.length-1].time,
+            number: (this.data.record[this.data.record.length-1]).number
+          },
+          header: {
+            'content-type': 'application/json' //默认值
+          },
+          success: (res) => {
+            console.log("insert new record uccessfully")
+            wx.navigateBack({
+              delta: 0,
+            })
+          }
+        })  
+      }
     }
   }
 })

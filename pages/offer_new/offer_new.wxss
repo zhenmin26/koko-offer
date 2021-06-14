@@ -42,12 +42,13 @@
   font-style: normal;
   font-weight: 350;
   color: gray;
+  font-weight: 600;
 }
 
 .picker_text{
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-weight: 350;
+  font-weight: 600;
 }
 
 .tip_text{
@@ -56,8 +57,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: darkgray;
+  color: gray;
   font-size: 15px;
+  font-weight: 600;
 }
 
 .button{
@@ -95,4 +97,5 @@
 
 .radiotxt{
   color: gray;
+  font-weight: 600;
 }

@@ -4,7 +4,7 @@
   <header headerIcon="home" headerText="新增记录"></header>
 </view>
 <view class="top"></view>
-
+<form bindsubmit="formSubmit">
 <view class="outer_section">
   <view class="section">
     <view class="section__title">请选择申请类型</view>
@@ -23,9 +23,9 @@
       <view class="section">
         <view class="section__title">工作岗位</view>
         <picker mode="multiSelector" bindchange="bindMultiPickerChangeOfJob" bindcolumnchange="bindMultiPickerColumnChangeOfJob" value="{{multiIndexOfJob}}" range="{{multiArrayOfJob}}">
-          <view class="picker">
+          <view class="picker" >
             当前选择：
-            <text>{{multiArrayOfJob[0][multiIndexOfJob[0]]}} {{multiArrayOfJob[1][multiIndexOfJob[1]]}}</text>
+            <text name="job" value='{{form.job}}' >{{multiArrayOfJob[0][multiIndexOfJob[0]]}} {{multiArrayOfJob[1][multiIndexOfJob[1]]}}</text>
           </view>
         </picker>
       </view>
@@ -113,13 +113,15 @@
         <view class="inpbox">
           <radio-group bindchange="radioChange" class="radiogroup">
             <view class="radiobox" wx:for="{{yes}}" wx:key="value">
-              <radio value="{{item.id}}" color="rgb(133,173,87)" checked="{{item.checked}}"/>
+              <radio value="{{item.id}}" color="rgb(133,173,87)" checked="{{item.checked}}" />
               <view class="radiotxt">{{item.value}}</view>
             </view>
           </radio-group>          
         </view>
       </view>
     </view>
-
     <button bindtap="addOffer" class="button">提交</button>
   </block>
+</form>
+
+

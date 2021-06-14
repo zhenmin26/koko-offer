@@ -107,6 +107,7 @@
   font-family: PingFangSC-Regular;
   font-size: 30rpx;
   color: #71747A;
+  font-weight: 600;
 }
 
 .record_time{
@@ -115,4 +116,5 @@
   font-family: PingFangSC-Regular;
   font-size: 28rpx;
   color: #969AA3;
+  font-weight: 600;
 }

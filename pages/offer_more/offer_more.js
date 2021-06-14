@@ -38,7 +38,7 @@ Page({
       wx.request({
         url: 'https://api.luzhenmin.com/getOfferDetail',
         data: {
-          userid: (wx.getStorageSync('id') || 'err'),
+          userid: (getApp().globalData.uid || 'err'),
           offer_type: this.data.offer.offer_type,
           job_company: this.data.offer.job_company,
           job_position: this.data.offer.job_position,
@@ -59,7 +59,7 @@ Page({
       wx.request({
         url: 'https://api.luzhenmin.com/getOfferDetail',
         data: {
-          userid: (wx.getStorageSync('id') || 'err'),
+          userid: (getApp().globalData.uid || 'err'),
           offer_type: this.data.offer.offer_type,
           internship_company: this.data.offer.internship_company,
           internship_position: this.data.offer.internship_position,
@@ -81,7 +81,7 @@ Page({
       wx.request({
         url: 'https://api.luzhenmin.com/getOfferDetail',
         data: {
-          userid: (wx.getStorageSync('id') || 'err'),
+          userid: (getApp().globalData.uid || 'err'),
           offer_type: this.data.offer.offer_type,
           study_school: this.data.offer.study_school,
           study_type: this.data.offer.study_type,
